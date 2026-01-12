@@ -61,38 +61,64 @@ st.sidebar.header("🔗 Enter News URLs")
 def load_urls_with_bs4(urls):
     documents = []
 
-    headers = {
-        "User-Agent": "Mozilla/5.0"
-    }
+    session = requests.Session()
+    session.headers.update({
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/122.0.0.0 Safari/537.36"
+        ),
+        "Accept": (
+            "text/html,application/xhtml+xml,"
+            "application/xml;q=0.9,image/webp,*/*;q=0.8"
+        ),
+        "Accept-Language": "en-US,en;q=0.9",
+        "Referer": "https://www.google.com/",
+        "DNT": "1",
+        "Connection": "keep-alive",
+        "Upgrade-Insecure-Requests": "1"
+    })
 
     for url in urls:
         try:
-            response = requests.get(url, headers=headers, timeout=10)
+            response = session.get(url, timeout=15)
             response.raise_for_status()
 
-            soup = BeautifulSoup(response.text, "lxml")
+            try:
+                soup = BeautifulSoup(response.text, "lxml")
+            except Exception:
+                soup = BeautifulSoup(response.text, "html.parser")
 
-            # Remove unwanted tags
-            for tag in soup(["script", "style", "nav", "footer", "header", "aside"]):
+            # Prefer article tag if present
+            article = soup.find("article")
+            content = article if article else soup
+
+            # Remove junk
+            for tag in content(["script", "style", "nav", "footer", "header", "aside"]):
                 tag.decompose()
 
-            text = soup.get_text(separator="\n")
+            text = content.get_text(separator="\n")
             text = "\n".join(
-                line.strip() for line in text.splitlines() if len(line.strip()) > 50
+                line.strip()
+                for line in text.splitlines()
+                if len(line.strip()) > 50
             )
 
             if text:
                 documents.append(
                     Document(
-                        page_content=text,
+                        page_content=text[:15000],  # safety cap
                         metadata={"source": url}
                     )
                 )
 
+        except requests.exceptions.HTTPError as e:
+            st.warning(f"❌ Blocked by site (403): {url}")
         except Exception as e:
-            st.warning(f"Failed to load {url}: {e}")
+            st.warning(f"❌ Failed to load {url}: {e}")
 
     return documents
+
 
 
 
