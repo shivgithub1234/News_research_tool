@@ -30,6 +30,7 @@ chromadb==1.4.0
 # huggingface-hub==0.20.3
 sentence-transformers
 torch
+lxml
 
 # Web loading
 beautifulsoup4==4.14.3
