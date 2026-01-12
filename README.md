@@ -2,10 +2,11 @@
 
 My News Research Tool is a **Retrieval-Augmented Generation (RAG)** application that allows users to ask questions directly from **real news articles** and receive **accurate, source-grounded answers**.
 
+Deployed url: https://mynewsresearchtool.streamlit.app/
 Unlike traditional summarizers, this tool:
 - ❌ does **not** auto-summarize articles  
 - ❌ does **not** hallucinate information  
-- ✅ answers questions **only using retrieved content**
+- ✅ answers questions **only using retrieved content** 
 
 ---
 
