@@ -17,6 +17,7 @@ class Settings:
     chunk_size: int = 1000
     chunk_overlap: int = 200
     retrieval_k: int = 4
+    data_directory: str = field(default_factory=lambda: os.getenv("NEWS_RESEARCH_DATA_DIR", str(PROJECT_ROOT / "data")))
 
 
 def load_settings() -> Settings:

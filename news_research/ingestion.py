@@ -46,7 +46,15 @@ def load_articles(urls: list[str]) -> IngestionResult:
                 response.raise_for_status()
                 text = extract_article_text(response.text)
                 if text:
-                    result.documents.append(Document(page_content=text, metadata={"source": url}))
+                    soup = BeautifulSoup(response.text, "html.parser")
+                    title = soup.title.get_text(strip=True) if soup.title else url
+                    published = soup.find("meta", attrs={"property": "article:published_time"})
+                    publisher = soup.find("meta", attrs={"property": "og:site_name"})
+                    result.documents.append(Document(page_content=text, metadata={
+                        "source": url, "title": title,
+                        "publisher": publisher.get("content", "") if publisher else parsed.hostname,
+                        "published": published.get("content", "") if published else "",
+                    }))
                 else:
                     result.warnings.append(f"No readable article text found: {url}")
             except requests.HTTPError as exc:
