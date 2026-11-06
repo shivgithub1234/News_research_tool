@@ -8,6 +8,7 @@ from langchain_core.documents import Document
 from news_research.ingestion import IngestionResult
 from news_research.generation import Answer
 from news_research.storage import ResearchStore
+from news_research.comparison import Comparison
 
 ENTRY = str(Path(__file__).resolve().parents[1] / "main.py")
 
@@ -62,3 +63,24 @@ class AppTests(unittest.TestCase):
             self.assertTrue(any("Earnings" in e.label for e in app.expander))
             app.run()
             self.assertEqual(generate.call_count, 1)
+
+    def test_comparison_submission_renders_reports(self):
+        app = AppTest.from_file(ENTRY).run(timeout=30)
+        store = ResearchStore(self.temp.name)
+        collection = store.collections()[0]["id"]
+        ids = [store.save_document(collection, Document(page_content=text, metadata={"source": f"https://example.com/{i}", "title": f"Report {i}"}))
+               for i, text in enumerate(["Initial profit was 18 million.", "Revised profit was 16 million."])]
+        docs = store.documents(collection)
+        evidence = {doc.metadata["article_id"]: {**doc.metadata, "passage": doc.page_content} for doc in docs}
+        reports = [{"article_id": doc.metadata["article_id"], "text": doc.page_content, "citations": []} for doc in docs]
+        comparison = Comparison("compared", [{"topic": "Profit", "relationship": "differing_reports", "reports": reports}], evidence)
+        with patch("news_research.ui.compare_articles", return_value=comparison) as compare:
+            app.run()
+            app.multiselect[0].set_value(ids)
+            next(t for t in app.text_input if t.label == "Comparison topic").set_value("Profit")
+            next(b for b in app.button if b.label == "Compare coverage").click().run()
+            self.assertFalse(app.exception)
+            self.assertTrue(any("18 million" in item.value for item in app.text))
+            self.assertTrue(any("16 million" in item.value for item in app.text))
+            app.run()
+            self.assertEqual(compare.call_count, 1)

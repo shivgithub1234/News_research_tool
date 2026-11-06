@@ -1,4 +1,5 @@
 """Streamlit research workspace."""
+import json
 import streamlit as st
 
 from news_research.config import load_settings
@@ -6,6 +7,7 @@ from news_research.generation import generate_answer
 from news_research.ingestion import load_articles
 from news_research.retrieval import create_embeddings, retrieve_documents
 from news_research.storage import ResearchStore, open_collection_index, prune_indexes
+from news_research.comparison import compare_articles
 
 
 @st.cache_resource
@@ -39,6 +41,8 @@ def run():
     collection_id = st.sidebar.selectbox("Research collection", list(names), format_func=names.get, key="collection")
     if st.session_state.get("answer_collection") != collection_id:
         st.session_state.pop("answer", None)
+    if st.session_state.get("comparison_collection") != collection_id:
+        st.session_state.pop("comparison", None)
     st.sidebar.header("Add articles")
     urls = [st.sidebar.text_input(f"News URL {i+1}").strip() for i in range(3)]
     if st.sidebar.button("Process Articles"):
@@ -47,6 +51,7 @@ def run():
             st.warning("Please enter at least one URL.")
         else:
             st.session_state.pop("answer", None)
+            st.session_state.pop("comparison", None)
             saved = 0
             with st.spinner("Fetching articles..."):
                 for url in urls:
@@ -78,6 +83,7 @@ def run():
                 store.delete_article(collection_id, article["id"])
                 prune_indexes(store, collection_id)
                 st.session_state.pop("answer", None)
+                st.session_state.pop("comparison", None)
                 st.rerun()
     st.subheader("Ask about this collection")
     with st.expander("Retrieval options"):
@@ -118,3 +124,49 @@ def run():
             st.caption(f"Generation: {answer.latency_ms / 1000:.2f}s | Tokens: {answer.tokens.get('total_tokens', 'unavailable')}")
         for source in answer.sources:
             st.markdown(f"- [{source}]({source})")
+
+    st.divider()
+    st.subheader("Compare coverage")
+    ready = {row["id"]: row for row in articles if row["status"] == "processed"}
+    labels = {ident: json.loads(row["metadata"]).get("title") or row["url"] for ident, row in ready.items()}
+    with st.form("comparison_form"):
+        selected = st.multiselect("Articles to compare (2–4)", list(ready), format_func=labels.get, max_selections=4)
+        topic = st.text_input("Comparison topic", placeholder="For example: profit figures and reporting dates")
+        compare = st.form_submit_button("Compare coverage")
+    if compare:
+        st.session_state.pop("comparison", None)
+        if len(selected) < 2 or not topic.strip():
+            st.warning("Choose two to four articles and enter a comparison topic.")
+        else:
+            documents = [doc for doc in store.documents(collection_id) if doc.metadata["article_id"] in selected]
+            with st.spinner("Comparing supplied evidence..."):
+                try:
+                    st.session_state["comparison"] = compare_articles(topic.strip(), documents, settings)
+                    st.session_state["comparison_collection"] = collection_id
+                except Exception:
+                    st.error("Comparison failed. Check API availability and try again.")
+    if st.session_state.get("comparison"):
+        render_comparison(st.session_state["comparison"])
+
+
+def render_comparison(result):
+    if result.status != "compared":
+        st.info("Insufficient evidence for comparison." if result.status == "insufficient_evidence"
+                else "The comparison failed evidence validation. No comparison is shown.")
+        return
+    st.caption("Comparison uses up to three excerpts per article. Missing coverage means not found in these excerpts. Labels require human review.")
+    for row in result.rows:
+        st.text(f"{row['topic']} — {row['relationship'].replace('_', ' ')}")
+        columns = st.columns(len(row["reports"]))
+        for column, report in zip(columns, row["reports"]):
+            with column:
+                article = next(item for item in result.evidence.values() if item["article_id"] == report["article_id"])
+                st.text(article.get("title") or article["source"])
+                st.caption(article.get("published") or "Publication date unknown")
+                st.text(report["text"])
+                for citation in report["citations"]:
+                    source = result.evidence[citation["evidence_id"]]
+                    with st.expander("Supporting evidence"):
+                        st.text(citation["quote"])
+                        st.text(source["passage"])
+                        st.link_button("Open source", source["source"])
