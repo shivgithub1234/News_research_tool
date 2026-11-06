@@ -1,0 +1,534 @@
+{
+  "description": "Authored synthetic news passages; not real events. Query-held-out test split.",
+  "articles": [
+    {
+      "id": "bank",
+      "title": "Harbor Bank earnings",
+      "published": "2026-01-10",
+      "publisher": "Synthetic News Fixture",
+      "source": "https://example.com/fixtures/bank",
+      "text": "Harbor Bank reported revenue of 120 million rupees and profit of 18 million rupees for Q4 2025. Higher loan demand increased revenue by 12 percent. The bank opened five branches."
+    },
+    {
+      "id": "bank2",
+      "title": "Harbor Bank follow-up",
+      "published": "2026-01-12",
+      "publisher": "Synthetic News Fixture",
+      "source": "https://example.com/fixtures/bank2",
+      "text": "Harbor Bank revised Q4 2025 profit to 16 million rupees after a 2 million rupee provisioning adjustment. Revenue remained 120 million rupees. The revision was announced on January 12, 2026."
+    },
+    {
+      "id": "ev",
+      "title": "VoltWay factory",
+      "published": "2026-02-03",
+      "publisher": "Synthetic News Fixture",
+      "source": "https://example.com/fixtures/ev",
+      "text": "VoltWay opened a battery factory in Pune on February 3, 2026. Annual capacity is 40,000 battery packs. The company invested 300 million rupees and expects to hire 250 workers. Production starts in April 2026."
+    },
+    {
+      "id": "ev2",
+      "title": "VoltWay local report",
+      "published": "2026-02-04",
+      "publisher": "Synthetic News Fixture",
+      "source": "https://example.com/fixtures/ev2",
+      "text": "A local report on VoltWay said the Pune factory would employ 200 permanent workers and 50 contractors. It confirmed capacity of 40,000 battery packs a year. Road upgrades near the factory are not yet complete."
+    },
+    {
+      "id": "solar",
+      "title": "SunField energy",
+      "published": "2026-03-01",
+      "publisher": "Synthetic News Fixture",
+      "source": "https://example.com/fixtures/solar",
+      "text": "SunField Energy commissioned a 75 megawatt solar plant in Gujarat. The plant cost 420 million rupees and supplies electricity to 30,000 homes. Construction took 18 months. No battery storage was installed."
+    },
+    {
+      "id": "retail",
+      "title": "MarketNest sales",
+      "published": "2026-03-05",
+      "publisher": "Synthetic News Fixture",
+      "source": "https://example.com/fixtures/retail",
+      "text": "MarketNest reported online sales of 90 million rupees in February 2026, up 20 percent from a year earlier. Delivery expenses rose 8 percent. The retailer closed two stores in Jaipur while opening a warehouse in Indore."
+    },
+    {
+      "id": "port",
+      "title": "EastPort shipping",
+      "published": "2026-03-07",
+      "publisher": "Synthetic News Fixture",
+      "source": "https://example.com/fixtures/port",
+      "text": "EastPort handled 60,000 containers in February 2026 compared with 50,000 in January. A storm halted operations for three days. A new crane will arrive in June. Shipping fees stayed unchanged."
+    },
+    {
+      "id": "chip",
+      "title": "MicroLeaf chips",
+      "published": "2026-03-09",
+      "publisher": "Synthetic News Fixture",
+      "source": "https://example.com/fixtures/chip",
+      "text": "MicroLeaf launched the ML-42 sensor chip for agricultural equipment. The chip costs 80 rupees per unit and consumes 2 milliwatts. Pilot shipments of 10,000 chips go to Nashik in May 2026. The product is not a smartphone processor."
+    }
+  ],
+  "questions": [
+    {
+      "id": "bank-0",
+      "question": "What revenue did Harbor Bank report?",
+      "evidence": [
+        "bank"
+      ],
+      "answer_points": [
+        "120 million rupees"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "bank-1",
+      "question": "What was Harbor Bank profit?",
+      "evidence": [
+        "bank"
+      ],
+      "answer_points": [
+        "18 million rupees"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "bank-2",
+      "question": "Why did Harbor Bank revenue grow?",
+      "evidence": [
+        "bank"
+      ],
+      "answer_points": [
+        "Higher loan demand"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "bank-3",
+      "question": "How many branches did Harbor Bank open?",
+      "evidence": [
+        "bank"
+      ],
+      "answer_points": [
+        "five"
+      ],
+      "split": "test"
+    },
+    {
+      "id": "bank2-0",
+      "question": "What was the revised Harbor Bank profit?",
+      "evidence": [
+        "bank2"
+      ],
+      "answer_points": [
+        "16 million rupees"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "bank2-1",
+      "question": "Why was Harbor Bank profit revised?",
+      "evidence": [
+        "bank2"
+      ],
+      "answer_points": [
+        "2 million rupee provisioning adjustment"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "bank2-2",
+      "question": "Did the Harbor Bank revenue figure change?",
+      "evidence": [
+        "bank2"
+      ],
+      "answer_points": [
+        "Revenue remained 120 million rupees"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "bank2-3",
+      "question": "When was the Harbor Bank revision announced?",
+      "evidence": [
+        "bank2"
+      ],
+      "answer_points": [
+        "January 12, 2026"
+      ],
+      "split": "test"
+    },
+    {
+      "id": "ev-0",
+      "question": "Where is the VoltWay battery factory?",
+      "evidence": [
+        "ev"
+      ],
+      "answer_points": [
+        "Pune"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "ev-1",
+      "question": "What is VoltWay annual battery capacity?",
+      "evidence": [
+        "ev"
+      ],
+      "answer_points": [
+        "40,000 battery packs"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "ev-2",
+      "question": "How much did VoltWay invest?",
+      "evidence": [
+        "ev"
+      ],
+      "answer_points": [
+        "300 million rupees"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "ev-3",
+      "question": "When will VoltWay production start?",
+      "evidence": [
+        "ev"
+      ],
+      "answer_points": [
+        "April 2026"
+      ],
+      "split": "test"
+    },
+    {
+      "id": "ev2-0",
+      "question": "How many permanent VoltWay workers are expected?",
+      "evidence": [
+        "ev2"
+      ],
+      "answer_points": [
+        "200"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "ev2-1",
+      "question": "How many VoltWay contractors are planned?",
+      "evidence": [
+        "ev2"
+      ],
+      "answer_points": [
+        "50"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "ev2-2",
+      "question": "What infrastructure remains unfinished near VoltWay?",
+      "evidence": [
+        "ev2"
+      ],
+      "answer_points": [
+        "Road upgrades"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "ev2-3",
+      "question": "What annual capacity did the local VoltWay report confirm?",
+      "evidence": [
+        "ev2"
+      ],
+      "answer_points": [
+        "40,000 battery packs"
+      ],
+      "split": "test"
+    },
+    {
+      "id": "solar-0",
+      "question": "What capacity does the SunField solar plant have?",
+      "evidence": [
+        "solar"
+      ],
+      "answer_points": [
+        "75 megawatts"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "solar-1",
+      "question": "Where is the SunField plant?",
+      "evidence": [
+        "solar"
+      ],
+      "answer_points": [
+        "Gujarat"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "solar-2",
+      "question": "How long did SunField construction take?",
+      "evidence": [
+        "solar"
+      ],
+      "answer_points": [
+        "18 months"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "solar-3",
+      "question": "Does SunField have battery storage?",
+      "evidence": [
+        "solar"
+      ],
+      "answer_points": [
+        "No battery storage was installed"
+      ],
+      "split": "test"
+    },
+    {
+      "id": "retail-0",
+      "question": "What were MarketNest February online sales?",
+      "evidence": [
+        "retail"
+      ],
+      "answer_points": [
+        "90 million rupees"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "retail-1",
+      "question": "How fast did MarketNest online sales grow?",
+      "evidence": [
+        "retail"
+      ],
+      "answer_points": [
+        "20 percent"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "retail-2",
+      "question": "Where did MarketNest open a warehouse?",
+      "evidence": [
+        "retail"
+      ],
+      "answer_points": [
+        "Indore"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "retail-3",
+      "question": "How many Jaipur stores did MarketNest close?",
+      "evidence": [
+        "retail"
+      ],
+      "answer_points": [
+        "two"
+      ],
+      "split": "test"
+    },
+    {
+      "id": "port-0",
+      "question": "How many containers did EastPort handle in February?",
+      "evidence": [
+        "port"
+      ],
+      "answer_points": [
+        "60,000"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "port-1",
+      "question": "What interrupted EastPort operations?",
+      "evidence": [
+        "port"
+      ],
+      "answer_points": [
+        "A storm"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "port-2",
+      "question": "When will the EastPort crane arrive?",
+      "evidence": [
+        "port"
+      ],
+      "answer_points": [
+        "June"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "port-3",
+      "question": "Did EastPort change shipping fees?",
+      "evidence": [
+        "port"
+      ],
+      "answer_points": [
+        "Shipping fees stayed unchanged"
+      ],
+      "split": "test"
+    },
+    {
+      "id": "chip-0",
+      "question": "What is the MicroLeaf chip model?",
+      "evidence": [
+        "chip"
+      ],
+      "answer_points": [
+        "ML-42"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "chip-1",
+      "question": "How much does each ML-42 cost?",
+      "evidence": [
+        "chip"
+      ],
+      "answer_points": [
+        "80 rupees"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "chip-2",
+      "question": "How much power does the ML-42 consume?",
+      "evidence": [
+        "chip"
+      ],
+      "answer_points": [
+        "2 milliwatts"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "chip-3",
+      "question": "Where will the MicroLeaf pilot shipment go?",
+      "evidence": [
+        "chip"
+      ],
+      "answer_points": [
+        "Nashik"
+      ],
+      "split": "test"
+    },
+    {
+      "id": "comparison-0",
+      "question": "How did Harbor Bank profit change between its initial report and revision?",
+      "evidence": [
+        "bank",
+        "bank2"
+      ],
+      "answer_points": [
+        "18 million initially",
+        "16 million revised",
+        "provisioning adjustment"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "comparison-1",
+      "question": "Do the two VoltWay reports agree on capacity and total workforce?",
+      "evidence": [
+        "ev",
+        "ev2"
+      ],
+      "answer_points": [
+        "40,000 packs",
+        "250 total",
+        "200 permanent plus 50 contractors"
+      ],
+      "split": "test"
+    },
+    {
+      "id": "comparison-2",
+      "question": "Compare the reported investments in VoltWay and SunField.",
+      "evidence": [
+        "ev",
+        "solar"
+      ],
+      "answer_points": [
+        "300 million rupees",
+        "420 million rupees"
+      ],
+      "split": "dev"
+    },
+    {
+      "id": "comparison-3",
+      "question": "Compare Harbor Bank revenue with MarketNest online sales.",
+      "evidence": [
+        "bank",
+        "retail"
+      ],
+      "answer_points": [
+        "120 million rupees",
+        "90 million rupees",
+        "different reporting periods"
+      ],
+      "split": "test"
+    },
+    {
+      "id": "absent-0",
+      "question": "Who is the CEO of Harbor Bank?",
+      "evidence": [],
+      "answer_points": [],
+      "split": "dev"
+    },
+    {
+      "id": "absent-1",
+      "question": "What is VoltWay share price today?",
+      "evidence": [],
+      "answer_points": [],
+      "split": "test"
+    },
+    {
+      "id": "absent-2",
+      "question": "What is the forecast SunField electricity output next year?",
+      "evidence": [],
+      "answer_points": [],
+      "split": "dev"
+    },
+    {
+      "id": "absent-3",
+      "question": "What profit did MarketNest report?",
+      "evidence": [],
+      "answer_points": [],
+      "split": "test"
+    },
+    {
+      "id": "absent-4",
+      "question": "Who manufactured the EastPort crane?",
+      "evidence": [],
+      "answer_points": [],
+      "split": "dev"
+    },
+    {
+      "id": "absent-5",
+      "question": "What is the MicroLeaf stock ticker?",
+      "evidence": [],
+      "answer_points": [],
+      "split": "test"
+    },
+    {
+      "id": "absent-6",
+      "question": "What is the current central bank interest rate?",
+      "evidence": [],
+      "answer_points": [],
+      "split": "dev"
+    },
+    {
+      "id": "absent-7",
+      "question": "How many VoltWay packs were actually sold in April?",
+      "evidence": [],
+      "answer_points": [],
+      "split": "test"
+    }
+  ]
+}
