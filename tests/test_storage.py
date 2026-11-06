@@ -4,6 +4,8 @@ from langchain_core.documents import Document
 from langchain_core.embeddings import Embeddings
 from news_research.config import Settings
 from news_research.storage import ResearchStore, normalize_url, open_collection_index, prune_indexes
+from news_research.retrieval import retrieve_documents
+from tests.chroma_cleanup import close_chroma
 
 
 class TinyEmbeddings(Embeddings):
@@ -18,6 +20,7 @@ class StorageTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
         self.addCleanup(self.temp.cleanup)
+        self.addCleanup(close_chroma, self.temp.name)
         self.store = ResearchStore(self.temp.name)
         self.a = self.store.create_collection("Banks")
         self.b = self.store.create_collection("Energy")
@@ -40,6 +43,9 @@ class StorageTests(unittest.TestCase):
         solar = open_collection_index(self.store, self.b, TinyEmbeddings(), self.settings)
         self.assertEqual(bank.similarity_search("solar", k=1)[0].page_content, "Bank revenue.")
         self.assertEqual(solar.similarity_search("bank", k=1)[0].page_content, "Solar capacity.")
+        for strategy in ["keyword", "hybrid"]:
+            self.assertEqual(retrieve_documents(bank, "bank", 2, strategy)[0].page_content, "Bank revenue.")
+        self.assertEqual(retrieve_documents(bank, "unmentioned", 2, "keyword"), [])
         self.store.delete_article(self.a, first)
         prune_indexes(self.store, self.a)
         self.assertIsNone(open_collection_index(self.store, self.a, TinyEmbeddings(), self.settings))

@@ -80,6 +80,9 @@ def run():
                 st.session_state.pop("answer", None)
                 st.rerun()
     st.subheader("Ask about this collection")
+    with st.expander("Retrieval options"):
+        strategy = st.selectbox("Search method", ["semantic", "keyword", "hybrid"])
+        retrieval_k = st.slider("Evidence passages", min_value=2, max_value=8, value=settings.retrieval_k)
     with st.form("question_form"):
         query = st.text_input("Your question")
         submitted = st.form_submit_button("Ask")
@@ -93,7 +96,7 @@ def run():
             with st.spinner("Retrieving evidence and preparing an answer..."):
                 try:
                     index = open_collection_index(store, collection_id, cached_embeddings(settings.embedding_model), settings)
-                    documents = retrieve_documents(index, query.strip(), settings.retrieval_k)
+                    documents = retrieve_documents(index, query.strip(), retrieval_k, strategy)
                     answer = generate_answer(query.strip(), documents, settings)
                     prune_indexes(store, collection_id, index._collection.name)
                     st.session_state["answer"] = answer

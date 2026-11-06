@@ -1,0 +1,1933 @@
+[
+  {
+    "split": "test",
+    "k": 2,
+    "answerable_count": 10,
+    "unanswerable_count": 4,
+    "metrics": {
+      "precision": 0.55,
+      "recall": 0.95,
+      "hit": 1.0,
+      "mrr": 0.95,
+      "complete_evidence": 0.9
+    },
+    "mean_retrieval_ms": 31.556864285448682,
+    "generation_evaluated": false,
+    "api_tokens": 0,
+    "api_cost": 0,
+    "questions": [
+      {
+        "id": "bank-3",
+        "question": "How many branches did Harbor Bank open?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "five"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 36.943999999493826,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-3",
+        "question": "When was the Harbor Bank revision announced?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "January 12, 2026"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank2",
+          "bank"
+        ],
+        "retrieval_ms": 29.001399998378474,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-3",
+        "question": "When will VoltWay production start?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "April 2026"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 23.533199997473275,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-3",
+        "question": "What annual capacity did the local VoltWay report confirm?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "40,000 battery packs"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 30.835800000204472,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-3",
+        "question": "Does SunField have battery storage?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "No battery storage was installed"
+        ],
+        "split": "test",
+        "retrieved": [
+          "solar",
+          "ev"
+        ],
+        "retrieval_ms": 29.877000000851694,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-3",
+        "question": "How many Jaipur stores did MarketNest close?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "two"
+        ],
+        "split": "test",
+        "retrieved": [
+          "retail",
+          "chip"
+        ],
+        "retrieval_ms": 37.60630000033416,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-3",
+        "question": "Did EastPort change shipping fees?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "Shipping fees stayed unchanged"
+        ],
+        "split": "test",
+        "retrieved": [
+          "port",
+          "bank2"
+        ],
+        "retrieval_ms": 33.097499999712454,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-3",
+        "question": "Where will the MicroLeaf pilot shipment go?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "Nashik"
+        ],
+        "split": "test",
+        "retrieved": [
+          "chip",
+          "port"
+        ],
+        "retrieval_ms": 43.97450000033132,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-1",
+        "question": "Do the two VoltWay reports agree on capacity and total workforce?",
+        "evidence": [
+          "ev",
+          "ev2"
+        ],
+        "answer_points": [
+          "40,000 packs",
+          "250 total",
+          "200 permanent plus 50 contractors"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 31.797399999049958,
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-3",
+        "question": "Compare Harbor Bank revenue with MarketNest online sales.",
+        "evidence": [
+          "bank",
+          "retail"
+        ],
+        "answer_points": [
+          "120 million rupees",
+          "90 million rupees",
+          "different reporting periods"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 30.2774000010686,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 0.0
+        }
+      },
+      {
+        "id": "absent-1",
+        "question": "What is VoltWay share price today?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "retail"
+        ],
+        "retrieval_ms": 24.95450000060373,
+        "metrics": null
+      },
+      {
+        "id": "absent-3",
+        "question": "What profit did MarketNest report?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "retail",
+          "bank"
+        ],
+        "retrieval_ms": 25.69719999883091,
+        "metrics": null
+      },
+      {
+        "id": "absent-5",
+        "question": "What is the MicroLeaf stock ticker?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "chip",
+          "retail"
+        ],
+        "retrieval_ms": 30.343700000230456,
+        "metrics": null
+      },
+      {
+        "id": "absent-7",
+        "question": "How many VoltWay packs were actually sold in April?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 33.85619999971823,
+        "metrics": null
+      }
+    ],
+    "retriever": "semantic",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dataset_note": "Authored synthetic news passages; not real events. Query-held-out test split."
+  },
+  {
+    "split": "test",
+    "k": 4,
+    "answerable_count": 10,
+    "unanswerable_count": 4,
+    "metrics": {
+      "precision": 0.3,
+      "recall": 1.0,
+      "hit": 1.0,
+      "mrr": 0.95,
+      "complete_evidence": 1.0
+    },
+    "mean_retrieval_ms": 35.32960714307722,
+    "generation_evaluated": false,
+    "api_tokens": 0,
+    "api_cost": 0,
+    "questions": [
+      {
+        "id": "bank-3",
+        "question": "How many branches did Harbor Bank open?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "five"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 26.746899999125162,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-3",
+        "question": "When was the Harbor Bank revision announced?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "January 12, 2026"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank2",
+          "bank",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 25.26180000131717,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-3",
+        "question": "When will VoltWay production start?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "April 2026"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "retail",
+          "bank2"
+        ],
+        "retrieval_ms": 31.63739999945392,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-3",
+        "question": "What annual capacity did the local VoltWay report confirm?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "40,000 battery packs"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "port",
+          "solar"
+        ],
+        "retrieval_ms": 36.2901000007696,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-3",
+        "question": "Does SunField have battery storage?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "No battery storage was installed"
+        ],
+        "split": "test",
+        "retrieved": [
+          "solar",
+          "ev",
+          "ev2",
+          "chip"
+        ],
+        "retrieval_ms": 26.54149999943911,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-3",
+        "question": "How many Jaipur stores did MarketNest close?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "two"
+        ],
+        "split": "test",
+        "retrieved": [
+          "retail",
+          "chip",
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 32.898500001465436,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-3",
+        "question": "Did EastPort change shipping fees?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "Shipping fees stayed unchanged"
+        ],
+        "split": "test",
+        "retrieved": [
+          "port",
+          "bank2",
+          "retail",
+          "bank"
+        ],
+        "retrieval_ms": 30.53379999983008,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-3",
+        "question": "Where will the MicroLeaf pilot shipment go?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "Nashik"
+        ],
+        "split": "test",
+        "retrieved": [
+          "chip",
+          "port",
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 26.231200001348043,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-1",
+        "question": "Do the two VoltWay reports agree on capacity and total workforce?",
+        "evidence": [
+          "ev",
+          "ev2"
+        ],
+        "answer_points": [
+          "40,000 packs",
+          "250 total",
+          "200 permanent plus 50 contractors"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev2",
+          "ev",
+          "bank",
+          "port"
+        ],
+        "retrieval_ms": 91.19840000130353,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-3",
+        "question": "Compare Harbor Bank revenue with MarketNest online sales.",
+        "evidence": [
+          "bank",
+          "retail"
+        ],
+        "answer_points": [
+          "120 million rupees",
+          "90 million rupees",
+          "different reporting periods"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "retail",
+          "port"
+        ],
+        "retrieval_ms": 45.54360000111046,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "absent-1",
+        "question": "What is VoltWay share price today?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "retail",
+          "ev2",
+          "bank2"
+        ],
+        "retrieval_ms": 28.720300000713905,
+        "metrics": null
+      },
+      {
+        "id": "absent-3",
+        "question": "What profit did MarketNest report?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "retail",
+          "bank",
+          "bank2",
+          "port"
+        ],
+        "retrieval_ms": 28.016599997499725,
+        "metrics": null
+      },
+      {
+        "id": "absent-5",
+        "question": "What is the MicroLeaf stock ticker?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "chip",
+          "retail",
+          "bank2",
+          "bank"
+        ],
+        "retrieval_ms": 29.117800000676652,
+        "metrics": null
+      },
+      {
+        "id": "absent-7",
+        "question": "How many VoltWay packs were actually sold in April?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "retail",
+          "port"
+        ],
+        "retrieval_ms": 35.87659999902826,
+        "metrics": null
+      }
+    ],
+    "retriever": "semantic",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dataset_note": "Authored synthetic news passages; not real events. Query-held-out test split."
+  },
+  {
+    "split": "test",
+    "k": 2,
+    "answerable_count": 10,
+    "unanswerable_count": 4,
+    "metrics": {
+      "precision": 0.6,
+      "recall": 1.0,
+      "hit": 1.0,
+      "mrr": 1.0,
+      "complete_evidence": 1.0
+    },
+    "mean_retrieval_ms": 0.34652857149402344,
+    "generation_evaluated": false,
+    "api_tokens": 0,
+    "api_cost": 0,
+    "questions": [
+      {
+        "id": "bank-3",
+        "question": "How many branches did Harbor Bank open?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "five"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 0.6863000016892329,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-3",
+        "question": "When was the Harbor Bank revision announced?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "January 12, 2026"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank2",
+          "bank"
+        ],
+        "retrieval_ms": 0.3268000000389293,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-3",
+        "question": "When will VoltWay production start?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "April 2026"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "port"
+        ],
+        "retrieval_ms": 0.2908000024035573,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-3",
+        "question": "What annual capacity did the local VoltWay report confirm?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "40,000 battery packs"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 0.3346999983477872,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-3",
+        "question": "Does SunField have battery storage?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "No battery storage was installed"
+        ],
+        "split": "test",
+        "retrieved": [
+          "solar",
+          "ev"
+        ],
+        "retrieval_ms": 0.2967000000353437,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-3",
+        "question": "How many Jaipur stores did MarketNest close?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "two"
+        ],
+        "split": "test",
+        "retrieved": [
+          "retail"
+        ],
+        "retrieval_ms": 0.38159999894560315,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-3",
+        "question": "Did EastPort change shipping fees?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "Shipping fees stayed unchanged"
+        ],
+        "split": "test",
+        "retrieved": [
+          "port"
+        ],
+        "retrieval_ms": 0.32300000020768493,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-3",
+        "question": "Where will the MicroLeaf pilot shipment go?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "Nashik"
+        ],
+        "split": "test",
+        "retrieved": [
+          "chip",
+          "port"
+        ],
+        "retrieval_ms": 0.30979999792180024,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-1",
+        "question": "Do the two VoltWay reports agree on capacity and total workforce?",
+        "evidence": [
+          "ev",
+          "ev2"
+        ],
+        "answer_points": [
+          "40,000 packs",
+          "250 total",
+          "200 permanent plus 50 contractors"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 0.35260000004200265,
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-3",
+        "question": "Compare Harbor Bank revenue with MarketNest online sales.",
+        "evidence": [
+          "bank",
+          "retail"
+        ],
+        "answer_points": [
+          "120 million rupees",
+          "90 million rupees",
+          "different reporting periods"
+        ],
+        "split": "test",
+        "retrieved": [
+          "retail",
+          "bank"
+        ],
+        "retrieval_ms": 0.316400000883732,
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "absent-1",
+        "question": "What is VoltWay share price today?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 0.294400000711903,
+        "metrics": null
+      },
+      {
+        "id": "absent-3",
+        "question": "What profit did MarketNest report?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev2",
+          "retail"
+        ],
+        "retrieval_ms": 0.316099998599384,
+        "metrics": null
+      },
+      {
+        "id": "absent-5",
+        "question": "What is the MicroLeaf stock ticker?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "chip",
+          "ev"
+        ],
+        "retrieval_ms": 0.2939000005426351,
+        "metrics": null
+      },
+      {
+        "id": "absent-7",
+        "question": "How many VoltWay packs were actually sold in April?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 0.3283000005467329,
+        "metrics": null
+      }
+    ],
+    "retriever": "keyword",
+    "model": "BM25 k1=1.5 b=0.75",
+    "dataset_note": "Authored synthetic news passages; not real events. Query-held-out test split."
+  },
+  {
+    "split": "test",
+    "k": 4,
+    "answerable_count": 10,
+    "unanswerable_count": 4,
+    "metrics": {
+      "precision": 0.3,
+      "recall": 1.0,
+      "hit": 1.0,
+      "mrr": 1.0,
+      "complete_evidence": 1.0
+    },
+    "mean_retrieval_ms": 0.31769285695710486,
+    "generation_evaluated": false,
+    "api_tokens": 0,
+    "api_cost": 0,
+    "questions": [
+      {
+        "id": "bank-3",
+        "question": "How many branches did Harbor Bank open?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "five"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 0.4748999999719672,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-3",
+        "question": "When was the Harbor Bank revision announced?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "January 12, 2026"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank2",
+          "bank",
+          "solar",
+          "chip"
+        ],
+        "retrieval_ms": 0.35660000139614567,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-3",
+        "question": "When will VoltWay production start?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "April 2026"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "port",
+          "ev2"
+        ],
+        "retrieval_ms": 0.21839999681105837,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-3",
+        "question": "What annual capacity did the local VoltWay report confirm?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "40,000 battery packs"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev2",
+          "ev",
+          "chip",
+          "bank"
+        ],
+        "retrieval_ms": 0.374700000975281,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-3",
+        "question": "Does SunField have battery storage?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "No battery storage was installed"
+        ],
+        "split": "test",
+        "retrieved": [
+          "solar",
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 0.292499997158302,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-3",
+        "question": "How many Jaipur stores did MarketNest close?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "two"
+        ],
+        "split": "test",
+        "retrieved": [
+          "retail"
+        ],
+        "retrieval_ms": 0.3049000006285496,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-3",
+        "question": "Did EastPort change shipping fees?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "Shipping fees stayed unchanged"
+        ],
+        "split": "test",
+        "retrieved": [
+          "port"
+        ],
+        "retrieval_ms": 0.278199997410411,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-3",
+        "question": "Where will the MicroLeaf pilot shipment go?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "Nashik"
+        ],
+        "split": "test",
+        "retrieved": [
+          "chip",
+          "port",
+          "ev2",
+          "bank"
+        ],
+        "retrieval_ms": 0.298099999781698,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-1",
+        "question": "Do the two VoltWay reports agree on capacity and total workforce?",
+        "evidence": [
+          "ev",
+          "ev2"
+        ],
+        "answer_points": [
+          "40,000 packs",
+          "250 total",
+          "200 permanent plus 50 contractors"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev2",
+          "ev",
+          "retail",
+          "bank2"
+        ],
+        "retrieval_ms": 0.3483000000414904,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-3",
+        "question": "Compare Harbor Bank revenue with MarketNest online sales.",
+        "evidence": [
+          "bank",
+          "retail"
+        ],
+        "answer_points": [
+          "120 million rupees",
+          "90 million rupees",
+          "different reporting periods"
+        ],
+        "split": "test",
+        "retrieved": [
+          "retail",
+          "bank",
+          "bank2",
+          "port"
+        ],
+        "retrieval_ms": 0.33320000147796236,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "absent-1",
+        "question": "What is VoltWay share price today?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "chip"
+        ],
+        "retrieval_ms": 0.28810000003431924,
+        "metrics": null
+      },
+      {
+        "id": "absent-3",
+        "question": "What profit did MarketNest report?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev2",
+          "retail",
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 0.2736000024015084,
+        "metrics": null
+      },
+      {
+        "id": "absent-5",
+        "question": "What is the MicroLeaf stock ticker?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "chip",
+          "ev",
+          "ev2",
+          "bank"
+        ],
+        "retrieval_ms": 0.2856999999494292,
+        "metrics": null
+      },
+      {
+        "id": "absent-7",
+        "question": "How many VoltWay packs were actually sold in April?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 0.32049999936134554,
+        "metrics": null
+      }
+    ],
+    "retriever": "keyword",
+    "model": "BM25 k1=1.5 b=0.75",
+    "dataset_note": "Authored synthetic news passages; not real events. Query-held-out test split."
+  },
+  {
+    "split": "test",
+    "k": 2,
+    "answerable_count": 10,
+    "unanswerable_count": 4,
+    "metrics": {
+      "precision": 0.6,
+      "recall": 1.0,
+      "hit": 1.0,
+      "mrr": 0.95,
+      "complete_evidence": 1.0
+    },
+    "mean_retrieval_ms": 31.533292857732572,
+    "generation_evaluated": false,
+    "api_tokens": 0,
+    "api_cost": 0,
+    "questions": [
+      {
+        "id": "bank-3",
+        "question": "How many branches did Harbor Bank open?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "five"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 28.206500002852408,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-3",
+        "question": "When was the Harbor Bank revision announced?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "January 12, 2026"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank2",
+          "bank"
+        ],
+        "retrieval_ms": 29.405000001133885,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-3",
+        "question": "When will VoltWay production start?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "April 2026"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 32.02360000068438,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-3",
+        "question": "What annual capacity did the local VoltWay report confirm?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "40,000 battery packs"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 34.26490000128979,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-3",
+        "question": "Does SunField have battery storage?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "No battery storage was installed"
+        ],
+        "split": "test",
+        "retrieved": [
+          "solar",
+          "ev"
+        ],
+        "retrieval_ms": 29.05330000066897,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-3",
+        "question": "How many Jaipur stores did MarketNest close?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "two"
+        ],
+        "split": "test",
+        "retrieved": [
+          "retail",
+          "chip"
+        ],
+        "retrieval_ms": 35.60790000119596,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-3",
+        "question": "Did EastPort change shipping fees?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "Shipping fees stayed unchanged"
+        ],
+        "split": "test",
+        "retrieved": [
+          "port",
+          "bank2"
+        ],
+        "retrieval_ms": 35.6612999967183,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-3",
+        "question": "Where will the MicroLeaf pilot shipment go?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "Nashik"
+        ],
+        "split": "test",
+        "retrieved": [
+          "chip",
+          "port"
+        ],
+        "retrieval_ms": 28.471200002968544,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-1",
+        "question": "Do the two VoltWay reports agree on capacity and total workforce?",
+        "evidence": [
+          "ev",
+          "ev2"
+        ],
+        "answer_points": [
+          "40,000 packs",
+          "250 total",
+          "200 permanent plus 50 contractors"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 31.860600000072736,
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-3",
+        "question": "Compare Harbor Bank revenue with MarketNest online sales.",
+        "evidence": [
+          "bank",
+          "retail"
+        ],
+        "answer_points": [
+          "120 million rupees",
+          "90 million rupees",
+          "different reporting periods"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank",
+          "retail"
+        ],
+        "retrieval_ms": 31.172099999821512,
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "absent-1",
+        "question": "What is VoltWay share price today?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 31.72899999844958,
+        "metrics": null
+      },
+      {
+        "id": "absent-3",
+        "question": "What profit did MarketNest report?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "retail",
+          "bank"
+        ],
+        "retrieval_ms": 27.926900002057664,
+        "metrics": null
+      },
+      {
+        "id": "absent-5",
+        "question": "What is the MicroLeaf stock ticker?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "chip",
+          "ev"
+        ],
+        "retrieval_ms": 27.317599997331854,
+        "metrics": null
+      },
+      {
+        "id": "absent-7",
+        "question": "How many VoltWay packs were actually sold in April?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 38.766200003010454,
+        "metrics": null
+      }
+    ],
+    "retriever": "hybrid",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dataset_note": "Authored synthetic news passages; not real events. Query-held-out test split."
+  },
+  {
+    "split": "test",
+    "k": 4,
+    "answerable_count": 10,
+    "unanswerable_count": 4,
+    "metrics": {
+      "precision": 0.3,
+      "recall": 1.0,
+      "hit": 1.0,
+      "mrr": 0.95,
+      "complete_evidence": 1.0
+    },
+    "mean_retrieval_ms": 41.45560714303948,
+    "generation_evaluated": false,
+    "api_tokens": 0,
+    "api_cost": 0,
+    "questions": [
+      {
+        "id": "bank-3",
+        "question": "How many branches did Harbor Bank open?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "five"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 27.71010000287788,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-3",
+        "question": "When was the Harbor Bank revision announced?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "January 12, 2026"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank2",
+          "bank",
+          "solar",
+          "chip"
+        ],
+        "retrieval_ms": 30.875800002831966,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-3",
+        "question": "When will VoltWay production start?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "April 2026"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 32.96969999792054,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-3",
+        "question": "What annual capacity did the local VoltWay report confirm?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "40,000 battery packs"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "bank",
+          "solar"
+        ],
+        "retrieval_ms": 44.541499999468215,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-3",
+        "question": "Does SunField have battery storage?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "No battery storage was installed"
+        ],
+        "split": "test",
+        "retrieved": [
+          "solar",
+          "ev",
+          "ev2",
+          "chip"
+        ],
+        "retrieval_ms": 42.57259999940288,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-3",
+        "question": "How many Jaipur stores did MarketNest close?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "two"
+        ],
+        "split": "test",
+        "retrieved": [
+          "retail",
+          "chip",
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 74.06329999867012,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-3",
+        "question": "Did EastPort change shipping fees?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "Shipping fees stayed unchanged"
+        ],
+        "split": "test",
+        "retrieved": [
+          "port",
+          "bank2",
+          "retail",
+          "bank"
+        ],
+        "retrieval_ms": 42.97159999987343,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-3",
+        "question": "Where will the MicroLeaf pilot shipment go?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "Nashik"
+        ],
+        "split": "test",
+        "retrieved": [
+          "chip",
+          "port",
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 35.6513000006089,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-1",
+        "question": "Do the two VoltWay reports agree on capacity and total workforce?",
+        "evidence": [
+          "ev",
+          "ev2"
+        ],
+        "answer_points": [
+          "40,000 packs",
+          "250 total",
+          "200 permanent plus 50 contractors"
+        ],
+        "split": "test",
+        "retrieved": [
+          "ev2",
+          "ev",
+          "retail",
+          "bank"
+        ],
+        "retrieval_ms": 44.77920000135782,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-3",
+        "question": "Compare Harbor Bank revenue with MarketNest online sales.",
+        "evidence": [
+          "bank",
+          "retail"
+        ],
+        "answer_points": [
+          "120 million rupees",
+          "90 million rupees",
+          "different reporting periods"
+        ],
+        "split": "test",
+        "retrieved": [
+          "bank",
+          "retail",
+          "bank2",
+          "port"
+        ],
+        "retrieval_ms": 35.954799997853115,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "absent-1",
+        "question": "What is VoltWay share price today?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "chip",
+          "retail"
+        ],
+        "retrieval_ms": 33.60149999934947,
+        "metrics": null
+      },
+      {
+        "id": "absent-3",
+        "question": "What profit did MarketNest report?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "retail",
+          "bank",
+          "bank2",
+          "ev2"
+        ],
+        "retrieval_ms": 48.49209999883897,
+        "metrics": null
+      },
+      {
+        "id": "absent-5",
+        "question": "What is the MicroLeaf stock ticker?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "chip",
+          "ev",
+          "bank2",
+          "bank"
+        ],
+        "retrieval_ms": 32.84510000230512,
+        "metrics": null
+      },
+      {
+        "id": "absent-7",
+        "question": "How many VoltWay packs were actually sold in April?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "test",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 53.34990000119433,
+        "metrics": null
+      }
+    ],
+    "retriever": "hybrid",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dataset_note": "Authored synthetic news passages; not real events. Query-held-out test split."
+  }
+]

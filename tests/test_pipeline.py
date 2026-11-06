@@ -13,6 +13,7 @@ from news_research.config import Settings, load_settings
 from news_research.generation import generate_answer
 from news_research.ingestion import extract_article_text, load_articles
 from news_research.retrieval import index_articles, retrieve_documents
+from tests.chroma_cleanup import close_chroma
 
 
 class ConfigurationTests(unittest.TestCase):
@@ -85,6 +86,7 @@ class PipelineTests(unittest.TestCase):
             retrieved = retrieve_documents(reopened, "Revenue?", k=1)
             self.assertEqual(retrieved[0].page_content, doc.page_content)
             self.assertEqual(retrieved[0].metadata["source"], doc.metadata["source"])
+            close_chroma(directory)
 
     @patch("news_research.retrieval.Chroma.from_documents")
     def test_empty_input_never_reaches_database(self, create):

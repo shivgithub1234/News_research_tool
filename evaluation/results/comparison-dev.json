@@ -1,0 +1,4216 @@
+[
+  {
+    "split": "dev",
+    "k": 2,
+    "answerable_count": 26,
+    "unanswerable_count": 4,
+    "metrics": {
+      "precision": 0.5384615384615384,
+      "recall": 1.0,
+      "hit": 1.0,
+      "mrr": 0.9230769230769231,
+      "complete_evidence": 1.0
+    },
+    "mean_retrieval_ms": 48.64908666640986,
+    "generation_evaluated": false,
+    "api_tokens": 0,
+    "api_cost": 0,
+    "questions": [
+      {
+        "id": "bank-0",
+        "question": "What revenue did Harbor Bank report?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "120 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 29.617799998959526,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank-1",
+        "question": "What was Harbor Bank profit?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "18 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 22.405700001399964,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank-2",
+        "question": "Why did Harbor Bank revenue grow?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "Higher loan demand"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 24.05709999948158,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-0",
+        "question": "What was the revised Harbor Bank profit?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "16 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 23.359499999060063,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-1",
+        "question": "Why was Harbor Bank profit revised?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "2 million rupee provisioning adjustment"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 35.36149999854388,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-2",
+        "question": "Did the Harbor Bank revenue figure change?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "Revenue remained 120 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 47.188500000629574,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-0",
+        "question": "Where is the VoltWay battery factory?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "Pune"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 41.12190000159899,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-1",
+        "question": "What is VoltWay annual battery capacity?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "40,000 battery packs"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 40.53579999890644,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-2",
+        "question": "How much did VoltWay invest?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "300 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 44.759399999747984,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-0",
+        "question": "How many permanent VoltWay workers are expected?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "200"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 46.445599997241516,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-1",
+        "question": "How many VoltWay contractors are planned?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "50"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 44.1620999990846,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-2",
+        "question": "What infrastructure remains unfinished near VoltWay?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "Road upgrades"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 45.88270000022021,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-0",
+        "question": "What capacity does the SunField solar plant have?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "75 megawatts"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev2"
+        ],
+        "retrieval_ms": 46.30919999908656,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-1",
+        "question": "Where is the SunField plant?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "Gujarat"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "chip"
+        ],
+        "retrieval_ms": 40.830099998856895,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-2",
+        "question": "How long did SunField construction take?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "18 months"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "port"
+        ],
+        "retrieval_ms": 40.58369999984279,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-0",
+        "question": "What were MarketNest February online sales?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "90 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "port"
+        ],
+        "retrieval_ms": 65.48290000137058,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-1",
+        "question": "How fast did MarketNest online sales grow?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "20 percent"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "bank"
+        ],
+        "retrieval_ms": 57.36889999752748,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-2",
+        "question": "Where did MarketNest open a warehouse?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "Indore"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "port"
+        ],
+        "retrieval_ms": 75.68859999810229,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-0",
+        "question": "How many containers did EastPort handle in February?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "60,000"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "bank2"
+        ],
+        "retrieval_ms": 59.59999999686261,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-1",
+        "question": "What interrupted EastPort operations?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "A storm"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "bank2"
+        ],
+        "retrieval_ms": 55.361200000334065,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-2",
+        "question": "When will the EastPort crane arrive?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "June"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 44.48860000047716,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-0",
+        "question": "What is the MicroLeaf chip model?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "ML-42"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "ev2"
+        ],
+        "retrieval_ms": 55.56609999985085,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-1",
+        "question": "How much does each ML-42 cost?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "80 rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "port"
+        ],
+        "retrieval_ms": 50.009899998258334,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-2",
+        "question": "How much power does the ML-42 consume?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "2 milliwatts"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "ev2"
+        ],
+        "retrieval_ms": 44.40930000055232,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-0",
+        "question": "How did Harbor Bank profit change between its initial report and revision?",
+        "evidence": [
+          "bank",
+          "bank2"
+        ],
+        "answer_points": [
+          "18 million initially",
+          "16 million revised",
+          "provisioning adjustment"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 49.402100001316285,
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-2",
+        "question": "Compare the reported investments in VoltWay and SunField.",
+        "evidence": [
+          "ev",
+          "solar"
+        ],
+        "answer_points": [
+          "300 million rupees",
+          "420 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev"
+        ],
+        "retrieval_ms": 54.538800002774224,
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "absent-0",
+        "question": "Who is the CEO of Harbor Bank?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 91.1789999991015,
+        "metrics": null
+      },
+      {
+        "id": "absent-2",
+        "question": "What is the forecast SunField electricity output next year?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "bank2"
+        ],
+        "retrieval_ms": 76.113200000691,
+        "metrics": null
+      },
+      {
+        "id": "absent-4",
+        "question": "Who manufactured the EastPort crane?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "chip"
+        ],
+        "retrieval_ms": 52.56569999983185,
+        "metrics": null
+      },
+      {
+        "id": "absent-6",
+        "question": "What is the current central bank interest rate?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "bank2",
+          "bank"
+        ],
+        "retrieval_ms": 55.077700002584606,
+        "metrics": null
+      }
+    ],
+    "retriever": "semantic",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dataset_note": "Authored synthetic news passages; not real events. Query-held-out test split."
+  },
+  {
+    "split": "dev",
+    "k": 4,
+    "answerable_count": 26,
+    "unanswerable_count": 4,
+    "metrics": {
+      "precision": 0.2692307692307692,
+      "recall": 1.0,
+      "hit": 1.0,
+      "mrr": 0.9230769230769231,
+      "complete_evidence": 1.0
+    },
+    "mean_retrieval_ms": 38.21429000017815,
+    "generation_evaluated": false,
+    "api_tokens": 0,
+    "api_cost": 0,
+    "questions": [
+      {
+        "id": "bank-0",
+        "question": "What revenue did Harbor Bank report?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "120 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 52.368500000739004,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank-1",
+        "question": "What was Harbor Bank profit?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "18 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 59.94280000231811,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank-2",
+        "question": "Why did Harbor Bank revenue grow?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "Higher loan demand"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 66.16829999984475,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-0",
+        "question": "What was the revised Harbor Bank profit?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "16 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 79.05899999968824,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-1",
+        "question": "Why was Harbor Bank profit revised?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "2 million rupee provisioning adjustment"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 45.41649999737274,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-2",
+        "question": "Did the Harbor Bank revenue figure change?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "Revenue remained 120 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 46.007400000235066,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-0",
+        "question": "Where is the VoltWay battery factory?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "Pune"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "solar",
+          "chip"
+        ],
+        "retrieval_ms": 36.077700002351776,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-1",
+        "question": "What is VoltWay annual battery capacity?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "40,000 battery packs"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "solar",
+          "bank"
+        ],
+        "retrieval_ms": 41.41139999774168,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-2",
+        "question": "How much did VoltWay invest?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "300 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "retail",
+          "bank"
+        ],
+        "retrieval_ms": 28.351099997962592,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-0",
+        "question": "How many permanent VoltWay workers are expected?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "200"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev",
+          "port",
+          "solar"
+        ],
+        "retrieval_ms": 27.803999997559004,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-1",
+        "question": "How many VoltWay contractors are planned?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "50"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev",
+          "solar",
+          "port"
+        ],
+        "retrieval_ms": 24.491300002409844,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-2",
+        "question": "What infrastructure remains unfinished near VoltWay?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "Road upgrades"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "port",
+          "solar"
+        ],
+        "retrieval_ms": 27.369900002668146,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-0",
+        "question": "What capacity does the SunField solar plant have?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "75 megawatts"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev2",
+          "ev",
+          "bank"
+        ],
+        "retrieval_ms": 26.53930000087712,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-1",
+        "question": "Where is the SunField plant?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "Gujarat"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "chip",
+          "retail",
+          "ev"
+        ],
+        "retrieval_ms": 27.335700000548968,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-2",
+        "question": "How long did SunField construction take?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "18 months"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "port",
+          "ev2",
+          "bank2"
+        ],
+        "retrieval_ms": 26.837600002181716,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-0",
+        "question": "What were MarketNest February online sales?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "90 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "port",
+          "chip",
+          "bank"
+        ],
+        "retrieval_ms": 29.29759999824455,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-1",
+        "question": "How fast did MarketNest online sales grow?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "20 percent"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "bank",
+          "port",
+          "chip"
+        ],
+        "retrieval_ms": 84.06700000341516,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-2",
+        "question": "Where did MarketNest open a warehouse?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "Indore"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "port",
+          "ev",
+          "bank"
+        ],
+        "retrieval_ms": 51.05790000015986,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-0",
+        "question": "How many containers did EastPort handle in February?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "60,000"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "bank2",
+          "bank",
+          "retail"
+        ],
+        "retrieval_ms": 41.12350000286824,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-1",
+        "question": "What interrupted EastPort operations?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "A storm"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "bank2",
+          "bank",
+          "retail"
+        ],
+        "retrieval_ms": 36.79290000218316,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-2",
+        "question": "When will the EastPort crane arrive?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "June"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "retail",
+          "bank2",
+          "bank"
+        ],
+        "retrieval_ms": 28.868400000646943,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-0",
+        "question": "What is the MicroLeaf chip model?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "ML-42"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "ev2",
+          "ev",
+          "bank2"
+        ],
+        "retrieval_ms": 24.890900000173133,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-1",
+        "question": "How much does each ML-42 cost?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "80 rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "port",
+          "ev2",
+          "retail"
+        ],
+        "retrieval_ms": 29.904099999839673,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-2",
+        "question": "How much power does the ML-42 consume?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "2 milliwatts"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "ev2",
+          "ev",
+          "solar"
+        ],
+        "retrieval_ms": 31.734399999550078,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-0",
+        "question": "How did Harbor Bank profit change between its initial report and revision?",
+        "evidence": [
+          "bank",
+          "bank2"
+        ],
+        "answer_points": [
+          "18 million initially",
+          "16 million revised",
+          "provisioning adjustment"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 25.84509999724105,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-2",
+        "question": "Compare the reported investments in VoltWay and SunField.",
+        "evidence": [
+          "ev",
+          "solar"
+        ],
+        "answer_points": [
+          "300 million rupees",
+          "420 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev",
+          "bank",
+          "ev2"
+        ],
+        "retrieval_ms": 30.2241999997932,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "absent-0",
+        "question": "Who is the CEO of Harbor Bank?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 24.571699999796692,
+        "metrics": null
+      },
+      {
+        "id": "absent-2",
+        "question": "What is the forecast SunField electricity output next year?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "bank2",
+          "retail",
+          "ev"
+        ],
+        "retrieval_ms": 37.09259999959613,
+        "metrics": null
+      },
+      {
+        "id": "absent-4",
+        "question": "Who manufactured the EastPort crane?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "chip",
+          "ev2",
+          "bank2"
+        ],
+        "retrieval_ms": 28.18699999988894,
+        "metrics": null
+      },
+      {
+        "id": "absent-6",
+        "question": "What is the current central bank interest rate?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "bank2",
+          "bank",
+          "retail",
+          "chip"
+        ],
+        "retrieval_ms": 27.590899997449014,
+        "metrics": null
+      }
+    ],
+    "retriever": "semantic",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dataset_note": "Authored synthetic news passages; not real events. Query-held-out test split."
+  },
+  {
+    "split": "dev",
+    "k": 2,
+    "answerable_count": 26,
+    "unanswerable_count": 4,
+    "metrics": {
+      "precision": 0.5384615384615384,
+      "recall": 1.0,
+      "hit": 1.0,
+      "mrr": 0.9615384615384616,
+      "complete_evidence": 1.0
+    },
+    "mean_retrieval_ms": 0.3282866665055432,
+    "generation_evaluated": false,
+    "api_tokens": 0,
+    "api_cost": 0,
+    "questions": [
+      {
+        "id": "bank-0",
+        "question": "What revenue did Harbor Bank report?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "120 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 0.5409000004874542,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank-1",
+        "question": "What was Harbor Bank profit?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "18 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank2",
+          "bank"
+        ],
+        "retrieval_ms": 0.36190000173519365,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank-2",
+        "question": "Why did Harbor Bank revenue grow?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "Higher loan demand"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 0.3118999993603211,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-0",
+        "question": "What was the revised Harbor Bank profit?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "16 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank2",
+          "bank"
+        ],
+        "retrieval_ms": 0.2671999973244965,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-1",
+        "question": "Why was Harbor Bank profit revised?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "2 million rupee provisioning adjustment"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank2",
+          "bank"
+        ],
+        "retrieval_ms": 0.2989000022353139,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-2",
+        "question": "Did the Harbor Bank revenue figure change?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "Revenue remained 120 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 0.27889999910257757,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-0",
+        "question": "Where is the VoltWay battery factory?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "Pune"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 0.3391999998711981,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-1",
+        "question": "What is VoltWay annual battery capacity?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "40,000 battery packs"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 0.3251000016462058,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-2",
+        "question": "How much did VoltWay invest?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "300 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 0.28169999859528616,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-0",
+        "question": "How many permanent VoltWay workers are expected?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "200"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 0.2488999998604413,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-1",
+        "question": "How many VoltWay contractors are planned?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "50"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 0.2989999993587844,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-2",
+        "question": "What infrastructure remains unfinished near VoltWay?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "Road upgrades"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 0.43840000216732733,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-0",
+        "question": "What capacity does the SunField solar plant have?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "75 megawatts"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev2"
+        ],
+        "retrieval_ms": 0.3744999994523823,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-1",
+        "question": "Where is the SunField plant?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "Gujarat"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "chip"
+        ],
+        "retrieval_ms": 0.3876999981002882,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-2",
+        "question": "How long did SunField construction take?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "18 months"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar"
+        ],
+        "retrieval_ms": 0.3268000000389293,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-0",
+        "question": "What were MarketNest February online sales?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "90 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "port"
+        ],
+        "retrieval_ms": 0.22289999833446927,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-1",
+        "question": "How fast did MarketNest online sales grow?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "20 percent"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail"
+        ],
+        "retrieval_ms": 0.27769999724114314,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-2",
+        "question": "Where did MarketNest open a warehouse?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "Indore"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "port"
+        ],
+        "retrieval_ms": 0.325400000292575,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-0",
+        "question": "How many containers did EastPort handle in February?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "60,000"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 0.2996000002895016,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-1",
+        "question": "What interrupted EastPort operations?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "A storm"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port"
+        ],
+        "retrieval_ms": 0.21500000002561137,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-2",
+        "question": "When will the EastPort crane arrive?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "June"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "chip"
+        ],
+        "retrieval_ms": 0.3867999985232018,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-0",
+        "question": "What is the MicroLeaf chip model?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "ML-42"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "ev"
+        ],
+        "retrieval_ms": 0.4445000013220124,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-1",
+        "question": "How much does each ML-42 cost?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "80 rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "solar"
+        ],
+        "retrieval_ms": 0.3280000019003637,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-2",
+        "question": "How much power does the ML-42 consume?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "2 milliwatts"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "ev2"
+        ],
+        "retrieval_ms": 0.3221000006305985,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-0",
+        "question": "How did Harbor Bank profit change between its initial report and revision?",
+        "evidence": [
+          "bank",
+          "bank2"
+        ],
+        "answer_points": [
+          "18 million initially",
+          "16 million revised",
+          "provisioning adjustment"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank2",
+          "bank"
+        ],
+        "retrieval_ms": 0.36759999784408137,
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-2",
+        "question": "Compare the reported investments in VoltWay and SunField.",
+        "evidence": [
+          "ev",
+          "solar"
+        ],
+        "answer_points": [
+          "300 million rupees",
+          "420 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev"
+        ],
+        "retrieval_ms": 0.34469999809516594,
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "absent-0",
+        "question": "Who is the CEO of Harbor Bank?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 0.3085999996983446,
+        "metrics": null
+      },
+      {
+        "id": "absent-2",
+        "question": "What is the forecast SunField electricity output next year?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev2"
+        ],
+        "retrieval_ms": 0.3288000007160008,
+        "metrics": null
+      },
+      {
+        "id": "absent-4",
+        "question": "Who manufactured the EastPort crane?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "chip"
+        ],
+        "retrieval_ms": 0.28160000147181563,
+        "metrics": null
+      },
+      {
+        "id": "absent-6",
+        "question": "What is the current central bank interest rate?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 0.31429999944521114,
+        "metrics": null
+      }
+    ],
+    "retriever": "keyword",
+    "model": "BM25 k1=1.5 b=0.75",
+    "dataset_note": "Authored synthetic news passages; not real events. Query-held-out test split."
+  },
+  {
+    "split": "dev",
+    "k": 4,
+    "answerable_count": 26,
+    "unanswerable_count": 4,
+    "metrics": {
+      "precision": 0.2692307692307692,
+      "recall": 1.0,
+      "hit": 1.0,
+      "mrr": 0.9615384615384616,
+      "complete_evidence": 1.0
+    },
+    "mean_retrieval_ms": 0.35590999990139,
+    "generation_evaluated": false,
+    "api_tokens": 0,
+    "api_cost": 0,
+    "questions": [
+      {
+        "id": "bank-0",
+        "question": "What revenue did Harbor Bank report?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "120 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "ev2"
+        ],
+        "retrieval_ms": 0.3144000002066605,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank-1",
+        "question": "What was Harbor Bank profit?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "18 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank2",
+          "bank",
+          "solar"
+        ],
+        "retrieval_ms": 0.4026000024168752,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank-2",
+        "question": "Why did Harbor Bank revenue grow?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "Higher loan demand"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 0.3598000002966728,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-0",
+        "question": "What was the revised Harbor Bank profit?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "16 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank2",
+          "bank",
+          "solar",
+          "chip"
+        ],
+        "retrieval_ms": 0.4127000029257033,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-1",
+        "question": "Why was Harbor Bank profit revised?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "2 million rupee provisioning adjustment"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank2",
+          "bank",
+          "solar"
+        ],
+        "retrieval_ms": 0.38019999919924885,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-2",
+        "question": "Did the Harbor Bank revenue figure change?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "Revenue remained 120 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "chip",
+          "ev2"
+        ],
+        "retrieval_ms": 0.38549999953829683,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-0",
+        "question": "Where is the VoltWay battery factory?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "Pune"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "chip",
+          "solar"
+        ],
+        "retrieval_ms": 0.3429000025789719,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-1",
+        "question": "What is VoltWay annual battery capacity?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "40,000 battery packs"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "chip",
+          "solar"
+        ],
+        "retrieval_ms": 0.37760000122943893,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-2",
+        "question": "How much did VoltWay invest?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "300 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 0.3825999992841389,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-0",
+        "question": "How many permanent VoltWay workers are expected?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "200"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 0.3986999981862027,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-1",
+        "question": "How many VoltWay contractors are planned?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "50"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 0.45529999988502823,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-2",
+        "question": "What infrastructure remains unfinished near VoltWay?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "Road upgrades"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 0.36639999962062575,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-0",
+        "question": "What capacity does the SunField solar plant have?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "75 megawatts"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev2",
+          "ev",
+          "chip"
+        ],
+        "retrieval_ms": 0.39820000165491365,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-1",
+        "question": "Where is the SunField plant?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "Gujarat"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "chip",
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 0.38419999691541307,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-2",
+        "question": "How long did SunField construction take?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "18 months"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar"
+        ],
+        "retrieval_ms": 0.35030000071856193,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-0",
+        "question": "What were MarketNest February online sales?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "90 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "port",
+          "ev"
+        ],
+        "retrieval_ms": 0.37089999750605784,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-1",
+        "question": "How fast did MarketNest online sales grow?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "20 percent"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail"
+        ],
+        "retrieval_ms": 0.3828999979305081,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-2",
+        "question": "Where did MarketNest open a warehouse?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "Indore"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "port",
+          "ev2",
+          "bank2"
+        ],
+        "retrieval_ms": 0.38109999877633527,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-0",
+        "question": "How many containers did EastPort handle in February?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "60,000"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "retail",
+          "ev",
+          "solar"
+        ],
+        "retrieval_ms": 0.42949999988195486,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-1",
+        "question": "What interrupted EastPort operations?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "A storm"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port"
+        ],
+        "retrieval_ms": 0.342100000125356,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-2",
+        "question": "When will the EastPort crane arrive?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "June"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "chip",
+          "ev2",
+          "bank"
+        ],
+        "retrieval_ms": 0.3481999992800411,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-0",
+        "question": "What is the MicroLeaf chip model?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "ML-42"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "ev",
+          "ev2",
+          "bank"
+        ],
+        "retrieval_ms": 0.3223999992769677,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-1",
+        "question": "How much does each ML-42 cost?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "80 rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "solar"
+        ],
+        "retrieval_ms": 0.27380000028642826,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-2",
+        "question": "How much power does the ML-42 consume?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "2 milliwatts"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "ev2",
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 0.2319999985047616,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-0",
+        "question": "How did Harbor Bank profit change between its initial report and revision?",
+        "evidence": [
+          "bank",
+          "bank2"
+        ],
+        "answer_points": [
+          "18 million initially",
+          "16 million revised",
+          "provisioning adjustment"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank2",
+          "bank",
+          "ev2",
+          "solar"
+        ],
+        "retrieval_ms": 0.3240999976696912,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-2",
+        "question": "Compare the reported investments in VoltWay and SunField.",
+        "evidence": [
+          "ev",
+          "solar"
+        ],
+        "answer_points": [
+          "300 million rupees",
+          "420 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev",
+          "retail",
+          "bank"
+        ],
+        "retrieval_ms": 0.36159999945084564,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "absent-0",
+        "question": "Who is the CEO of Harbor Bank?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "chip",
+          "ev"
+        ],
+        "retrieval_ms": 0.3208999987691641,
+        "metrics": null
+      },
+      {
+        "id": "absent-2",
+        "question": "What is the forecast SunField electricity output next year?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev2",
+          "chip",
+          "ev"
+        ],
+        "retrieval_ms": 0.28610000299522653,
+        "metrics": null
+      },
+      {
+        "id": "absent-4",
+        "question": "Who manufactured the EastPort crane?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "chip",
+          "ev2",
+          "bank"
+        ],
+        "retrieval_ms": 0.2294000005349517,
+        "metrics": null
+      },
+      {
+        "id": "absent-6",
+        "question": "What is the current central bank interest rate?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "chip",
+          "ev"
+        ],
+        "retrieval_ms": 0.3609000013966579,
+        "metrics": null
+      }
+    ],
+    "retriever": "keyword",
+    "model": "BM25 k1=1.5 b=0.75",
+    "dataset_note": "Authored synthetic news passages; not real events. Query-held-out test split."
+  },
+  {
+    "split": "dev",
+    "k": 2,
+    "answerable_count": 26,
+    "unanswerable_count": 4,
+    "metrics": {
+      "precision": 0.5384615384615384,
+      "recall": 1.0,
+      "hit": 1.0,
+      "mrr": 0.9230769230769231,
+      "complete_evidence": 1.0
+    },
+    "mean_retrieval_ms": 29.187046666265815,
+    "generation_evaluated": false,
+    "api_tokens": 0,
+    "api_cost": 0,
+    "questions": [
+      {
+        "id": "bank-0",
+        "question": "What revenue did Harbor Bank report?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "120 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 28.166799998871284,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank-1",
+        "question": "What was Harbor Bank profit?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "18 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 32.596699998975964,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank-2",
+        "question": "Why did Harbor Bank revenue grow?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "Higher loan demand"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 27.805300000181887,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-0",
+        "question": "What was the revised Harbor Bank profit?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "16 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 26.27529999881517,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-1",
+        "question": "Why was Harbor Bank profit revised?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "2 million rupee provisioning adjustment"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 24.764400001004105,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-2",
+        "question": "Did the Harbor Bank revenue figure change?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "Revenue remained 120 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 21.76820000022417,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-0",
+        "question": "Where is the VoltWay battery factory?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "Pune"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 22.768599999835715,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-1",
+        "question": "What is VoltWay annual battery capacity?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "40,000 battery packs"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 23.59989999968093,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-2",
+        "question": "How much did VoltWay invest?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "300 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 24.778799997875467,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-0",
+        "question": "How many permanent VoltWay workers are expected?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "200"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 27.61380000083591,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-1",
+        "question": "How many VoltWay contractors are planned?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "50"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev"
+        ],
+        "retrieval_ms": 28.873300001578173,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-2",
+        "question": "What infrastructure remains unfinished near VoltWay?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "Road upgrades"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 42.73079999984475,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-0",
+        "question": "What capacity does the SunField solar plant have?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "75 megawatts"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev2"
+        ],
+        "retrieval_ms": 27.883299997483846,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-1",
+        "question": "Where is the SunField plant?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "Gujarat"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "chip"
+        ],
+        "retrieval_ms": 28.079600000637583,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-2",
+        "question": "How long did SunField construction take?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "18 months"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "port"
+        ],
+        "retrieval_ms": 23.438799998984905,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-0",
+        "question": "What were MarketNest February online sales?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "90 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "port"
+        ],
+        "retrieval_ms": 20.04789999773493,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-1",
+        "question": "How fast did MarketNest online sales grow?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "20 percent"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "bank"
+        ],
+        "retrieval_ms": 23.097900000720983,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-2",
+        "question": "Where did MarketNest open a warehouse?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "Indore"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "port"
+        ],
+        "retrieval_ms": 20.744399997056462,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-0",
+        "question": "How many containers did EastPort handle in February?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "60,000"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 38.78439999971306,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-1",
+        "question": "What interrupted EastPort operations?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "A storm"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "bank2"
+        ],
+        "retrieval_ms": 37.78550000060932,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-2",
+        "question": "When will the EastPort crane arrive?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "June"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "bank2"
+        ],
+        "retrieval_ms": 25.986600001488114,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-0",
+        "question": "What is the MicroLeaf chip model?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "ML-42"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "ev"
+        ],
+        "retrieval_ms": 28.66639999774634,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-1",
+        "question": "How much does each ML-42 cost?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "80 rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "solar"
+        ],
+        "retrieval_ms": 33.96000000066124,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-2",
+        "question": "How much power does the ML-42 consume?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "2 milliwatts"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "ev2"
+        ],
+        "retrieval_ms": 33.28229999897303,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-0",
+        "question": "How did Harbor Bank profit change between its initial report and revision?",
+        "evidence": [
+          "bank",
+          "bank2"
+        ],
+        "answer_points": [
+          "18 million initially",
+          "16 million revised",
+          "provisioning adjustment"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 34.32089999841992,
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-2",
+        "question": "Compare the reported investments in VoltWay and SunField.",
+        "evidence": [
+          "ev",
+          "solar"
+        ],
+        "answer_points": [
+          "300 million rupees",
+          "420 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev"
+        ],
+        "retrieval_ms": 47.29919999954291,
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "absent-0",
+        "question": "Who is the CEO of Harbor Bank?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 31.589700000040466,
+        "metrics": null
+      },
+      {
+        "id": "absent-2",
+        "question": "What is the forecast SunField electricity output next year?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev2"
+        ],
+        "retrieval_ms": 35.90590000021621,
+        "metrics": null
+      },
+      {
+        "id": "absent-4",
+        "question": "Who manufactured the EastPort crane?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "chip"
+        ],
+        "retrieval_ms": 27.471299999888288,
+        "metrics": null
+      },
+      {
+        "id": "absent-6",
+        "question": "What is the current central bank interest rate?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2"
+        ],
+        "retrieval_ms": 25.52540000033332,
+        "metrics": null
+      }
+    ],
+    "retriever": "hybrid",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dataset_note": "Authored synthetic news passages; not real events. Query-held-out test split."
+  },
+  {
+    "split": "dev",
+    "k": 4,
+    "answerable_count": 26,
+    "unanswerable_count": 4,
+    "metrics": {
+      "precision": 0.2692307692307692,
+      "recall": 1.0,
+      "hit": 1.0,
+      "mrr": 0.9230769230769231,
+      "complete_evidence": 1.0
+    },
+    "mean_retrieval_ms": 23.65091666688386,
+    "generation_evaluated": false,
+    "api_tokens": 0,
+    "api_cost": 0,
+    "questions": [
+      {
+        "id": "bank-0",
+        "question": "What revenue did Harbor Bank report?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "120 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "ev2",
+          "port"
+        ],
+        "retrieval_ms": 23.952100000315113,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank-1",
+        "question": "What was Harbor Bank profit?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "18 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "solar",
+          "port"
+        ],
+        "retrieval_ms": 23.918800001411,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank-2",
+        "question": "Why did Harbor Bank revenue grow?",
+        "evidence": [
+          "bank"
+        ],
+        "answer_points": [
+          "Higher loan demand"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "port",
+          "retail"
+        ],
+        "retrieval_ms": 22.55660000082571,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-0",
+        "question": "What was the revised Harbor Bank profit?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "16 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "solar",
+          "chip"
+        ],
+        "retrieval_ms": 24.783200002275407,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-1",
+        "question": "Why was Harbor Bank profit revised?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "2 million rupee provisioning adjustment"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "solar",
+          "port"
+        ],
+        "retrieval_ms": 22.792399999161717,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "bank2-2",
+        "question": "Did the Harbor Bank revenue figure change?",
+        "evidence": [
+          "bank2"
+        ],
+        "answer_points": [
+          "Revenue remained 120 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "chip",
+          "ev2"
+        ],
+        "retrieval_ms": 20.47070000116946,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-0",
+        "question": "Where is the VoltWay battery factory?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "Pune"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "chip",
+          "solar"
+        ],
+        "retrieval_ms": 18.34679999956279,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-1",
+        "question": "What is VoltWay annual battery capacity?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "40,000 battery packs"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "solar",
+          "chip"
+        ],
+        "retrieval_ms": 20.94099999885657,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev-2",
+        "question": "How much did VoltWay invest?",
+        "evidence": [
+          "ev"
+        ],
+        "answer_points": [
+          "300 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "retail",
+          "bank"
+        ],
+        "retrieval_ms": 21.435899998323293,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-0",
+        "question": "How many permanent VoltWay workers are expected?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "200"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev",
+          "port",
+          "solar"
+        ],
+        "retrieval_ms": 22.679199999402044,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-1",
+        "question": "How many VoltWay contractors are planned?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "50"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev2",
+          "ev",
+          "solar",
+          "port"
+        ],
+        "retrieval_ms": 19.11110000219196,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "ev2-2",
+        "question": "What infrastructure remains unfinished near VoltWay?",
+        "evidence": [
+          "ev2"
+        ],
+        "answer_points": [
+          "Road upgrades"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "ev",
+          "ev2",
+          "port",
+          "solar"
+        ],
+        "retrieval_ms": 17.941800000699004,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 0.5,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-0",
+        "question": "What capacity does the SunField solar plant have?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "75 megawatts"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev2",
+          "ev",
+          "bank"
+        ],
+        "retrieval_ms": 18.65389999875333,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-1",
+        "question": "Where is the SunField plant?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "Gujarat"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "chip",
+          "ev",
+          "retail"
+        ],
+        "retrieval_ms": 20.886899998004083,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "solar-2",
+        "question": "How long did SunField construction take?",
+        "evidence": [
+          "solar"
+        ],
+        "answer_points": [
+          "18 months"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "port",
+          "ev2",
+          "bank2"
+        ],
+        "retrieval_ms": 18.964500002766727,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-0",
+        "question": "What were MarketNest February online sales?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "90 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "port",
+          "ev",
+          "chip"
+        ],
+        "retrieval_ms": 23.5145000006014,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-1",
+        "question": "How fast did MarketNest online sales grow?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "20 percent"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "bank",
+          "port",
+          "chip"
+        ],
+        "retrieval_ms": 27.227700000366895,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "retail-2",
+        "question": "Where did MarketNest open a warehouse?",
+        "evidence": [
+          "retail"
+        ],
+        "answer_points": [
+          "Indore"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "retail",
+          "port",
+          "ev",
+          "ev2"
+        ],
+        "retrieval_ms": 24.323500001628418,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-0",
+        "question": "How many containers did EastPort handle in February?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "60,000"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "retail",
+          "chip",
+          "ev"
+        ],
+        "retrieval_ms": 29.247200000099838,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-1",
+        "question": "What interrupted EastPort operations?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "A storm"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "bank2",
+          "bank",
+          "retail"
+        ],
+        "retrieval_ms": 26.020699999207864,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "port-2",
+        "question": "When will the EastPort crane arrive?",
+        "evidence": [
+          "port"
+        ],
+        "answer_points": [
+          "June"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "bank2",
+          "bank",
+          "chip"
+        ],
+        "retrieval_ms": 28.953199998795753,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-0",
+        "question": "What is the MicroLeaf chip model?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "ML-42"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "ev",
+          "ev2",
+          "bank2"
+        ],
+        "retrieval_ms": 25.8179000011296,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-1",
+        "question": "How much does each ML-42 cost?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "80 rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "solar",
+          "port",
+          "ev2"
+        ],
+        "retrieval_ms": 24.350899999262765,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "chip-2",
+        "question": "How much power does the ML-42 consume?",
+        "evidence": [
+          "chip"
+        ],
+        "answer_points": [
+          "2 milliwatts"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "chip",
+          "ev2",
+          "bank",
+          "ev"
+        ],
+        "retrieval_ms": 24.63970000098925,
+        "metrics": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-0",
+        "question": "How did Harbor Bank profit change between its initial report and revision?",
+        "evidence": [
+          "bank",
+          "bank2"
+        ],
+        "answer_points": [
+          "18 million initially",
+          "16 million revised",
+          "provisioning adjustment"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "solar",
+          "ev2"
+        ],
+        "retrieval_ms": 23.81500000046799,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "comparison-2",
+        "question": "Compare the reported investments in VoltWay and SunField.",
+        "evidence": [
+          "ev",
+          "solar"
+        ],
+        "answer_points": [
+          "300 million rupees",
+          "420 million rupees"
+        ],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev",
+          "bank",
+          "retail"
+        ],
+        "retrieval_ms": 25.59810000093421,
+        "metrics": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "hit": 1.0,
+          "mrr": 1.0,
+          "complete_evidence": 1.0
+        }
+      },
+      {
+        "id": "absent-0",
+        "question": "Who is the CEO of Harbor Bank?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "chip",
+          "retail"
+        ],
+        "retrieval_ms": 29.864999996789265,
+        "metrics": null
+      },
+      {
+        "id": "absent-2",
+        "question": "What is the forecast SunField electricity output next year?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "solar",
+          "ev2",
+          "retail",
+          "ev"
+        ],
+        "retrieval_ms": 27.955000001384178,
+        "metrics": null
+      },
+      {
+        "id": "absent-4",
+        "question": "Who manufactured the EastPort crane?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "port",
+          "chip",
+          "ev2",
+          "bank2"
+        ],
+        "retrieval_ms": 22.97060000273632,
+        "metrics": null
+      },
+      {
+        "id": "absent-6",
+        "question": "What is the current central bank interest rate?",
+        "evidence": [],
+        "answer_points": [],
+        "split": "dev",
+        "retrieved": [
+          "bank",
+          "bank2",
+          "chip",
+          "retail"
+        ],
+        "retrieval_ms": 27.793599998403806,
+        "metrics": null
+      }
+    ],
+    "retriever": "hybrid",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dataset_note": "Authored synthetic news passages; not real events. Query-held-out test split."
+  }
+]

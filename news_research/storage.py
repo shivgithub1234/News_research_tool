@@ -139,7 +139,7 @@ def open_collection_index(store, collection_id, embeddings, settings):
         ident = hashlib.sha256((chunk.metadata["article_id"] + str(i) + chunk.page_content).encode()).hexdigest()
         chunk.metadata["chunk_id"] = ident
         ids.append(ident)
-    version = hashlib.sha256((settings.embedding_model + "|".join(ids)).encode()).hexdigest()[:16]
+    version = hashlib.sha256((settings.embedding_model + "|normalized-v1|" + "|".join(ids)).encode()).hexdigest()[:16]
     prefix = "research_" + collection_id + "_"
     index = Chroma(collection_name=prefix + version, embedding_function=embeddings,
                    persist_directory=str(store.directory / "vectors"))
