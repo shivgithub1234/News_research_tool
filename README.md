@@ -1,146 +1,89 @@
-# 📰 My News Research Tool
+# My News Research Tool
 
-My News Research Tool is a **Retrieval-Augmented Generation (RAG)** application that allows users to ask questions directly from **real news articles** and receive **accurate, source-grounded answers**.
+A Streamlit retrieval-augmented generation (RAG) app for asking questions about news articles.
 
-Deployed url: https://mynewsresearchtool.streamlit.app/
+[Hosted app](https://mynewsresearchtool.streamlit.app/)
 
-Unlike traditional summarizers, this tool:
-- ❌ does **not** auto-summarize articles  
-- ❌ does **not** hallucinate information  
-- ✅ answers questions **only using retrieved content** 
+## Current capabilities
 
----
+- Accept up to three article URLs and extract text using Requests and BeautifulSoup.
+- Split text into 1,000-character chunks with 200-character overlap.
+- Compute embeddings locally with `sentence-transformers/all-MiniLM-L6-v2`.
+- Store embeddings in Chroma and retrieve four chunks per question.
+- Generate answers through Groq using `openai/gpt-oss-20b` and display retrieved source URLs.
 
-## ✨ Features
+The prompt asks the model to use only the retrieved context. This does not guarantee correct answers or prevent hallucinations. Source links identify retrieved articles, not verified claim-level citations.
 
-- 🔗 Input multiple news article URLs  
-- 🧹 Clean article extraction using **BeautifulSoup**  
-- ✂️ Intelligent text chunking with overlap  
-- 🧠 Semantic search using **ChromaDB**  
-- 🤖 Fast LLM inference via **Groq (LLaMA-3.1-8B-Instant)**  
-- 📚 Answers grounded strictly in retrieved articles  
-- 🔍 Displays **source URLs** for each answer  
-- 💻 Fully compatible with **Windows + Python 3.12**
+## Setup (Python 3.12)
 
----
+```sh
+git clone https://github.com/shivgithub1234/News_research_tool.git
+cd News_research_tool
+```
 
-## 🧠 How It Works
+On Windows PowerShell:
 
-News URLs
-↓
-BeautifulSoup Scraper
-↓
-Clean Article Text
-↓
-Text Chunking
-↓
-Local Embeddings
-↓
-Chroma Vector DB
-↓
-Retriever
-↓
-Groq LLM
-↓
-Answer + Source Links
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+Copy-Item .env.example .env
+```
 
-yaml
-Copy code
+On macOS/Linux:
 
-This pipeline ensures **trustworthy and traceable** answers.
+```sh
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+cp .env.example .env
+```
 
----
+Edit `.env` and set `GROQ_API_KEY` to your Groq API key. An existing environment variable takes precedence over `.env`. Do not commit credentials.
 
-## 🛠 Tech Stack
+**Only the Groq API key is required.** Hugging Face authentication is not required for the public embedding model. The first indexing operation downloads model weights and needs internet access; embeddings are computed locally. Article fetching and Groq generation also require network access.
 
-- **Frontend:** Streamlit  
-- **LLM:** Groq (LLaMA-3.1-8B-Instant)  
-- **Framework:** LangChain (Runnable API)  
-- **Embeddings:** Sentence-Transformers (local)  
-- **Vector Database:** ChromaDB  
-- **Web Scraping:** BeautifulSoup + Requests  
-- **Language:** Python 3.12  
+Run on Windows:
 
----
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run main.py
+```
 
-## 🚀 Getting Started
+Run on macOS/Linux:
 
-### 1️⃣ Clone the Repository
+```sh
+.venv/bin/python -m streamlit run main.py
+```
 
-```bash
-git clone <your-repo-url>
-cd my-news-research-tool
-2️⃣ Create & Activate Virtual Environment
-Git Bash
+Enter URLs, click **Process Articles**, enter a question, and click **Ask**. The embedding model is loaded lazily and cached across Streamlit reruns. Questions are sent only when the form is submitted.
 
-bash
-Copy code
-python -m venv .venv
-source .venv/Scripts/activate
-PowerShell
+## Project structure
 
-powershell
-Copy code
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-3️⃣ Install Dependencies
-bash
-Copy code
-pip install -r requirements.txt
-4️⃣ Set Environment Variables
-Create a .env file:
+```text
+main.py                      Streamlit entry point
+news_research/
+  config.py                  Environment validation and pipeline settings
+  ingestion.py               HTTP fetching and article extraction
+  retrieval.py               Embeddings, chunking, indexing, and retrieval
+  generation.py              Prompt, Groq invocation, and answer sources
+  ui.py                      Streamlit controls and session state
+tests/                       Offline regression tests
+.env.example                 Environment variable template
+requirements.txt             Runtime dependencies
+```
 
-env
-Copy code
-GROQ_API_KEY=your_groq_api_key_here
-Hugging Face token is not required since embeddings are computed locally.
+## Tests
 
-▶️ Run the Application
-bash
-Copy code
-python -m streamlit run main.py
-The application will open automatically in your browser.
+After installing dependencies, run with your virtual environment's Python:
 
-🧪 Example Questions
-How will interest rate changes affect banks?
+```sh
+python -m unittest discover -s tests -v
+```
 
-What risks are highlighted for equity markets?
+Tests use mocked network/model boundaries and require neither credentials nor model downloads.
 
-What are analysts saying about inflation?
+## Current limitations and next stages
 
-Each answer includes clickable source URLs.
-
-🔐 Why This Tool Is Reliable
-✔ Retrieval happens before generation
-
-✔ LLM answers are restricted to retrieved context
-
-✔ Sources come from actual documents
-
-❌ No auto-summarization
-
-❌ No fabricated citations
-
-This follows industry best practices for RAG systems.
-
-📁 Project Structure
-bash
-Copy code
-my-news-research-tool/
-│
-├── main.py
-├── requirements.txt
-├── README.md
-├── .env
-├── chroma_db/
-└── .venv/
-🌱 Future Improvements
-Persist & reload ChromaDB automatically
-
-Highlight supporting text snippets
-
-RSS-based live news ingestion
-
-Confidence scoring for answers
-
-Deployment on Streamlit Cloud
+- Extraction can fail for paywalls, JavaScript-rendered pages, or blocked requests. It drops short lines and caps each article at 15,000 characters.
+- The app uses one local Chroma directory. It does not yet isolate research collections, deduplicate articles, or automatically reconnect a new UI session to an existing index. Previously indexed content can remain in the shared index.
+- Basic URL syntax validation is not a complete network access policy. Harden URL fetching before treating the app as a public multi-user service.
+- Retrieval quality, answer support, and abstention are not yet benchmarked.
+- Planned extensions: evaluation baseline, saved collections, evidence-linked citations, retrieval experiments, and news coverage comparison.
