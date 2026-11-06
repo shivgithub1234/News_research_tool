@@ -103,6 +103,15 @@ def run():
     if st.session_state.get("answer"):
         answer = st.session_state["answer"]
         st.subheader("Answer")
-        st.write(answer.text)
+        st.text(answer.text)
+        for citation in answer.evidence:
+            with st.expander(f"[{citation['number']}] {citation.get('title') or 'Supporting passage'}"):
+                st.text(citation["quote"])
+                st.caption(f"Publisher: {citation.get('publisher') or 'Unknown'} | Published: {citation.get('published') or 'Unknown'}")
+                st.text(citation["passage"])
+                st.link_button("Open article", citation["source"])
+        st.caption("Citation IDs and quotes are checked. Whether each quote supports its claim still requires review.")
+        if answer.tokens:
+            st.caption(f"Generation: {answer.latency_ms / 1000:.2f}s | Tokens: {answer.tokens.get('total_tokens', 'unavailable')}")
         for source in answer.sources:
             st.markdown(f"- [{source}]({source})")

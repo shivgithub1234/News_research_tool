@@ -6,6 +6,8 @@ from unittest.mock import patch
 from streamlit.testing.v1 import AppTest
 from langchain_core.documents import Document
 from news_research.ingestion import IngestionResult
+from news_research.generation import Answer
+from news_research.storage import ResearchStore
 
 ENTRY = str(Path(__file__).resolve().parents[1] / "main.py")
 
@@ -42,3 +44,21 @@ class AppTests(unittest.TestCase):
             app.sidebar.button[1].click().run()
         self.assertFalse(app.exception)
         self.assertTrue(app.success)
+
+    def test_answer_submission_renders_evidence_without_rerun_api_call(self):
+        app = AppTest.from_file(ENTRY).run(timeout=30)
+        store = ResearchStore(self.temp.name)
+        collection = store.collections()[0]["id"]
+        doc = Document(page_content="Revenue grew.", metadata={"source": "https://example.com/a"})
+        store.save_document(collection, doc)
+        answer = Answer("Revenue grew. [1]", ["https://example.com/a"], evidence=[
+            {"number": 1, "quote": "Revenue grew.", "passage": "Revenue grew.", "source": "https://example.com/a", "title": "Earnings"}])
+        with patch("news_research.ui.open_collection_index"), patch("news_research.ui.cached_embeddings"), patch("news_research.ui.prune_indexes"), patch("news_research.ui.retrieve_documents", return_value=[doc]), patch("news_research.ui.generate_answer", return_value=answer) as generate:
+            app.run()
+            next(t for t in app.text_input if t.label == "Your question").set_value("What changed?")
+            next(b for b in app.button if b.label == "Ask").click().run()
+            self.assertFalse(app.exception)
+            self.assertTrue(any("Revenue grew." in t.value for t in app.text))
+            self.assertTrue(any("Earnings" in e.label for e in app.expander))
+            app.run()
+            self.assertEqual(generate.call_count, 1)

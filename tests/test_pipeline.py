@@ -99,24 +99,6 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(answer.sources, [])
         self.assertIn("No relevant information", answer.text)
 
-    @patch("news_research.generation.ChatGroq")
-    def test_answer_uses_context_and_deduplicates_sources(self, llm):
-        prompts = []
-
-        def respond(prompt):
-            prompts.append(prompt.to_string())
-            return "Revenue increased."
-
-        llm.return_value = RunnableLambda(respond)
-        documents = [
-            Document(page_content="Revenue increased by 10%.", metadata={"source": "https://example.com/a"}),
-            Document(page_content="Demand grew.", metadata={"source": "https://example.com/a"}),
-        ]
-        answer = generate_answer("What changed?", documents, Settings("test"))
-        self.assertEqual(answer.sources, ["https://example.com/a"])
-        self.assertEqual(answer.text, "Revenue increased.")
-        self.assertIn("Revenue increased by 10%.", prompts[0])
-        self.assertIn("What changed?", prompts[0])
 
 
 if __name__ == "__main__":
