@@ -11,9 +11,15 @@ def run():
     st.title("News Research Workspace")
     st.caption("Explore reporting, compare accounts, and inspect the evidence.")
     settings = load_settings(require_api_key=False)
-    mode = os.getenv("NEWS_RESEARCH_MODE", "demo").lower()
+    mode = os.getenv("NEWS_RESEARCH_MODE", "hosted").lower()
     if mode == "demo":
         run_demo()
+    elif mode == "hosted":
+        from news_research.hosted import connect_workspace
+        visitor = connect_workspace(settings)
+        if visitor is not None:
+            from news_research.ui import run_private
+            run_private(visitor)
     elif mode == "private":
         if private_access():
             try:
@@ -23,4 +29,4 @@ def run():
                 return
             run_private(settings)
     else:
-        st.error("NEWS_RESEARCH_MODE must be demo or private.")
+        st.error("NEWS_RESEARCH_MODE must be hosted, demo or private.")

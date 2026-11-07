@@ -1,16 +1,10 @@
-# Release and deployment
+# Streamlit deployment
 
-The target is the existing Streamlit Community Cloud app. The new default is a public read-only demo: `main.py`, Python 3.12, minimal root `requirements.txt`, no Groq secret, no model download, and no private data access. `NEWS_RESEARCH_MODE=demo` can be set explicitly. Keep private credentials out of a public demo.
+The existing Community Cloud app tracks main and runs main.py. Install the root requirements.txt on Python 3.12 or later. The default mode is hosted. If overriding the mode in hosting secrets, set NEWS_RESEARCH_MODE="hosted".
 
-## Owner release checkpoint
+Visitors supply their own free-tier Groq key in the password field. The server checks model access and opens the collection directory associated with the key. Disconnect clears the session. The host needs no shared Groq key or workspace password in hosted mode. Community Cloud local disk can reset. Back up important research separately.
 
-1. Review the development branch and its GitHub Actions run. The branch is `codex/organize-stage-one` in `shivgithub1234/News_research_tool`.
-2. Sign in to the existing Streamlit Community Cloud workspace. Confirm the app's configured repository, branch and entry point. Use `main.py` and Python 3.12. If an existing app tracks `main` and its branch cannot be changed in place, merge the reviewed branch through a pull request, or deploy a separate preview before switching production. Do not delete the existing app just to change branches.
-3. Keep demo mode enabled. No Groq or Hugging Face credentials are necessary. Redeploy or reboot as appropriate and inspect build logs.
-4. Verify the title is **News Research Workspace**, the banner says **Free offline demo**, and **Find evidence** returns dated Harbor Bank passages. The old MVP title is not a successful release of this version.
-5. For rollback, restore the previously deployed commit/branch through the same release path. Do not delete private data directories during code rollback.
-
-The existing public URL was observed serving the original app during development. The dashboard required sign-in; a repository push alone does not verify a production deployment.
+To verify a release, open https://mynewsresearchtool.streamlit.app/ and look for **Open your research workspace**. Connect, process two public HTML articles, ask a question and inspect its citations. Select both articles and run a coverage comparison. Explicit demo mode remains available for the offline walkthrough.
 
 ## Private operation
 

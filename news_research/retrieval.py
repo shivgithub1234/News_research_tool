@@ -1,11 +1,26 @@
 """Embedding creation, chunking, indexing, and retrieval."""
 from langchain_community.vectorstores import Chroma
 from langchain_core.documents import Document
+from langchain_core.embeddings import Embeddings
 
 from news_research.config import Settings
 
 
+class HostedEmbeddings(Embeddings):
+    def __init__(self):
+        from chromadb.utils.embedding_functions import ONNXMiniLM_L6_V2
+        self.model = ONNXMiniLM_L6_V2(preferred_providers=["CPUExecutionProvider"])
+
+    def embed_documents(self, texts):
+        return [vector.tolist() for vector in self.model(texts)]
+
+    def embed_query(self, text):
+        return self.embed_documents([text])[0]
+
+
 def create_embeddings(model_name: str):
+    if model_name == "onnx/all-MiniLM-L6-v2":
+        return HostedEmbeddings()
     from langchain_community.embeddings import HuggingFaceEmbeddings
     return HuggingFaceEmbeddings(model_name=model_name, encode_kwargs={"normalize_embeddings": True})
 

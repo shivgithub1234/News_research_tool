@@ -5,5 +5,5 @@
   "postCreateCommand": "python -m pip install -r requirements.txt",
   "postAttachCommand": {"demo": "python -m streamlit run main.py --server.headless true --server.address 0.0.0.0"},
   "forwardPorts": [8501],
-  "portsAttributes": {"8501": {"label": "Public demo", "onAutoForward": "openPreview"}}
+  "portsAttributes": {"8501": {"label": "Research workspace", "onAutoForward": "openPreview"}}
 }

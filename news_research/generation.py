@@ -26,7 +26,7 @@ def invoke_json(system, payload, settings):
         raise ValueError("GROQ_API_KEY is required for live generation.")
     llm = ChatGroq(api_key=settings.groq_api_key, model_name=settings.llm_model,
                    temperature=0, max_tokens=1500, max_retries=0, timeout=30,
-                   model_kwargs={"response_format": {"type": "json_object"}})
+                   reasoning_effort="low", model_kwargs={"response_format": {"type": "json_object"}})
     start = time.perf_counter()
     response = llm.invoke([SystemMessage(content=system), HumanMessage(content=json.dumps(payload))])
     elapsed = (time.perf_counter() - start) * 1000

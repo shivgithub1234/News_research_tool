@@ -1,12 +1,10 @@
 # News Research Workspace
 
-A Streamlit application for investigating news coverage. Save articles by research topic, ask questions with inspectable citations, and compare how different reports describe an event. The public demo runs locally or on Streamlit without an API key. The private workspace adds persistence, semantic retrieval, and Groq generation.
+[Open the full News Research Workspace](https://mynewsresearchtool.streamlit.app/). Enter your own free-tier Groq key, open your workspace, paste news URLs and click **Process Articles**. Ask a question to inspect its cited passages, or select two to four articles to compare their coverage.
 
-**Try the demo locally:** `python -m pip install -r requirements.txt` then `python -m streamlit run main.py` (Python 3.12 recommended). Search for **How did Harbor Bank profit change?** and inspect the dated passages. The sample articles are fictional. The public demo shows retrieved passages and an authored comparison example; it does not generate live answers.
+Hosted mode checks model access with Groq and keeps the key in server memory for the session. Each key opens its own collection directory. Disconnect clears the session. Streamlit Community Cloud storage may reset on redeploy. The hosted app runs MiniLM embeddings on the CPU using ONNX Runtime. Local private mode and the original benchmark use Sentence Transformers.
 
-[Existing hosted Streamlit app](https://mynewsresearchtool.streamlit.app/) · [Recruiter walkthrough](docs/walkthrough.md) · [Deployment guide](docs/deployment.md) · [Measured retrieval experiments](docs/retrieval-experiments.md)
-
-The existing hosted app may still run the original MVP until its deployment is updated. See the deployment guide for the release checkpoint.
+[Recruiter walkthrough](docs/walkthrough.md) | [Deployment guide](docs/deployment.md) | [Measured retrieval experiments](docs/retrieval-experiments.md)
 
 ## What the private workspace does
 
@@ -45,7 +43,7 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m streamlit run main.py
 ```
 
-On macOS/Linux, use `python3.12 -m venv .venv` and `.venv/bin/python` in place of `.\.venv\Scripts\python.exe`. The default **demo** mode uses bundled sample data, makes no outbound model requests, and never opens private storage.
+On macOS/Linux, use `python3.12 -m venv .venv` and `.venv/bin/python` in place of `.\.venv\Scripts\python.exe`. The default hosted mode accepts your own key. Set NEWS_RESEARCH_MODE=demo to use only the bundled synthetic articles.
 
 For **private mode**, install `requirements-private.txt` instead, copy `.env.example` to `.env`, and configure:
 
@@ -80,7 +78,7 @@ python -m evaluation.compare --split dev
 python -m evaluation.compare --split test
 ```
 
-Use private dependencies for the full suite and evaluations. CI checks the public demo separately with minimal dependencies. Unit and integration tests use controlled model responses, real local Chroma storage, and Streamlit interaction tests. The measured retrieval benchmark uses real local embeddings. No CI secrets, model downloads, or Groq requests are required by the tests. [Evaluation protocol](evaluation/README.md) · [Per-question reports](evaluation/results/)
+Use private dependencies for the full suite and evaluations. CI checks hosted sign-in, workspace isolation and the optional demo with the deployment dependencies. Unit and integration tests use controlled model responses, real local Chroma storage, and Streamlit interaction tests. The measured retrieval benchmark uses real local embeddings. No CI secrets, model downloads, or Groq requests are required by the tests. [Evaluation protocol](evaluation/README.md) · [Per-question reports](evaluation/results/)
 
 ## Practical limits
 
