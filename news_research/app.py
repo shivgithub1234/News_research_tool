@@ -15,6 +15,11 @@ def run():
     if mode == "demo":
         run_demo()
     elif mode == "hosted":
+        choice = st.radio("Choose how to explore", ["Try the demo", "Use my Groq key"],
+                          horizontal=True, key="workspace_mode")
+        if choice == "Try the demo":
+            run_demo()
+            return
         from news_research.hosted import connect_workspace
         visitor = connect_workspace(settings)
         if visitor is not None:

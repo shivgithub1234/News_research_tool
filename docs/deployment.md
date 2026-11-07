@@ -4,7 +4,7 @@ The existing Community Cloud app tracks main and runs main.py. Install the root 
 
 Visitors supply their own free-tier Groq key in the password field. The server checks model access and opens the collection directory associated with the key. Disconnect clears the session. The host needs no shared Groq key or workspace password in hosted mode. Community Cloud local disk can reset. Back up important research separately.
 
-To verify a release, open https://mynewsresearchtool.streamlit.app/ and look for **Open your research workspace**. Connect, process two public HTML articles, ask a question and inspect its citations. Select both articles and run a coverage comparison. Explicit demo mode remains available for the offline walkthrough.
+To verify a release, open https://mynewsresearchtool.streamlit.app/ and search the sample articles in **Try the demo**. Select **Use my Groq key**, connect, process two public HTML articles, ask a question and inspect its citations. Select both articles and run a coverage comparison. Explicit demo mode remains available for the offline walkthrough.
 
 ## Private operation
 

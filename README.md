@@ -1,6 +1,6 @@
 # News Research Workspace
 
-[Open the full News Research Workspace](https://mynewsresearchtool.streamlit.app/). Enter your own free-tier Groq key, open your workspace, paste news URLs and click **Process Articles**. Ask a question to inspect its cited passages, or select two to four articles to compare their coverage.
+[Open News Research Workspace](https://mynewsresearchtool.streamlit.app/). Choose **Try the demo** to search the sample articles without a key. Choose **Use my Groq key** to add your own news URLs, ask questions with citations, and compare coverage across two to four articles.
 
 Hosted mode checks model access with Groq and keeps the key in server memory for the session. Each key opens its own collection directory. Disconnect clears the session. Streamlit Community Cloud storage may reset on redeploy. The hosted app runs MiniLM embeddings on the CPU using ONNX Runtime. Local private mode and the original benchmark use Sentence Transformers.
 
