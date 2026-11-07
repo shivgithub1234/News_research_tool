@@ -8,6 +8,7 @@ from news_research.ingestion import load_articles
 from news_research.retrieval import create_embeddings, retrieve_documents
 from news_research.storage import ResearchStore, open_collection_index, prune_indexes
 from news_research.comparison import compare_articles
+from news_research.summary import is_summary_request, summarize_article
 
 
 @st.cache_resource
@@ -82,6 +83,14 @@ def run_private(settings):
                 st.session_state.pop("comparison", None)
                 st.rerun()
     st.subheader("Ask about this collection")
+    ready = {row["id"]: row for row in articles if row["status"] == "processed"}
+    labels = {ident: json.loads(row["metadata"]).get("title") or row["url"] for ident, row in ready.items()}
+    summary_id = next(iter(ready), None)
+    if not ready:
+        st.info("Paste a news URL in the sidebar and click Process Articles before asking a question.")
+    elif len(ready) > 1:
+        summary_id = st.selectbox("Article to summarize", list(ready), index=None, format_func=labels.get,
+                                  key="summary_source_" + collection_id)
     with st.expander("Retrieval options"):
         strategy = st.selectbox("Search method", ["semantic", "keyword", "hybrid"])
         retrieval_k = st.slider("Evidence passages", min_value=2, max_value=8, value=settings.retrieval_k)
@@ -96,13 +105,19 @@ def run_private(settings):
             st.warning("Please process news URLs first.")
         elif not settings.groq_api_key or not settings.free_tier_confirmed:
             st.warning("Live generation is disabled. Configure a Groq key and confirm your account is on the free tier before enabling it.")
+        elif is_summary_request(query) and summary_id is None:
+            st.warning("Choose an article under Article to summarize, then click Ask again.")
         else:
             with st.spinner("Retrieving evidence and preparing an answer..."):
                 try:
-                    index = open_collection_index(store, collection_id, cached_embeddings(settings.embedding_model), settings)
-                    documents = retrieve_documents(index, query.strip(), retrieval_k, strategy)
-                    answer = generate_answer(query.strip(), documents, settings)
-                    prune_indexes(store, collection_id, index._collection.name)
+                    if is_summary_request(query):
+                        article = next(d for d in store.documents(collection_id) if d.metadata["article_id"] == summary_id)
+                        answer = summarize_article(article, query.strip(), settings)
+                    else:
+                        index = open_collection_index(store, collection_id, cached_embeddings(settings.embedding_model), settings)
+                        documents = retrieve_documents(index, query.strip(), retrieval_k, strategy)
+                        answer = generate_answer(query.strip(), documents, settings)
+                        prune_indexes(store, collection_id, index._collection.name)
                     st.session_state["answer"] = answer
                     st.session_state["answer_collection"] = collection_id
                     logging.getLogger(__name__).info("answer_complete status=%s duration_ms=%.1f tokens=%s", answer.status, answer.latency_ms, answer.tokens.get("total_tokens", 0))
@@ -127,8 +142,6 @@ def run_private(settings):
 
     st.divider()
     st.subheader("Compare coverage")
-    ready = {row["id"]: row for row in articles if row["status"] == "processed"}
-    labels = {ident: json.loads(row["metadata"]).get("title") or row["url"] for ident, row in ready.items()}
     with st.form("comparison_form"):
         selected = st.multiselect("Articles to compare (2–4)", list(ready), format_func=labels.get, max_selections=4)
         topic = st.text_input("Comparison topic", placeholder="For example: profit figures and reporting dates", max_chars=500)
