@@ -36,33 +36,26 @@ class IngestionTests(unittest.TestCase):
         html = f"<nav>{'Navigation ' * 10}</nav><article><p>{paragraph}</p><script>{'junk' * 20}</script></article>"
         self.assertEqual(extract_article_text(html), paragraph)
 
-    @patch("news_research.ingestion.requests.Session")
-    def test_partial_failure_keeps_successful_article_and_real_status(self, factory):
-        session = factory.return_value.__enter__.return_value
+    @patch("news_research.ingestion.fetch_html")
+    def test_partial_failure_keeps_successful_article_and_real_status(self, fetch):
         failed = requests.Response()
         failed.status_code = 404
-        success = Mock()
-        success.text = "<article>" + "A valid article contains enough useful text for extraction. " * 3 + "</article>"
-        session.get.side_effect = [requests.HTTPError(response=failed), success]
+        fetch.side_effect = [requests.HTTPError(response=failed), "<article>" + "A valid article contains enough useful text for extraction. " * 3 + "</article>"]
         result = load_articles(["https://example.com/missing", "https://example.com/article"])
         self.assertEqual(len(result.documents), 1)
         self.assertEqual(result.documents[0].metadata["source"], "https://example.com/article")
         self.assertIn("HTTP 404", result.warnings[0])
 
-    @patch("news_research.ingestion.requests.Session")
-    def test_empty_page_is_reported(self, factory):
-        session = factory.return_value.__enter__.return_value
-        session.get.return_value.text = "<html><p>Short</p></html>"
+    @patch("news_research.ingestion.fetch_html", return_value="<html><p>Short</p></html>")
+    def test_empty_page_is_reported(self, fetch):
         result = load_articles(["https://example.com/empty"])
         self.assertFalse(result.documents)
         self.assertIn("No readable article", result.warnings[0])
 
-    @patch("news_research.ingestion.requests.Session")
-    def test_invalid_scheme_is_not_fetched(self, factory):
+    def test_invalid_scheme_is_not_fetched(self):
         result = load_articles(["file:///private.txt"])
-        factory.return_value.__enter__.return_value.get.assert_not_called()
         self.assertFalse(result.documents)
-        self.assertIn("Invalid article URL", result.warnings[0])
+        self.assertIn("rejected", result.warnings[0])
 
 
 class PipelineTests(unittest.TestCase):

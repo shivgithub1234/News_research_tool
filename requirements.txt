@@ -1,26 +1,3 @@
-# UI
+# Public offline demo (default Streamlit deployment)
 streamlit==1.52.2
-
-# Environment variables
 python-dotenv==1.2.1
-
-# LangChain core ecosystem (modern, stable)
-langchain==1.2.3
-langchain-core==1.2.7
-langchain-community==0.4.1
-langchain-groq==1.1.1
-langchain-text-splitters==1.1.0
-
-# Vector database
-chromadb==1.4.0
-
-# Local embeddings
-sentence-transformers
-torch
-lxml
-
-# Web loading
-beautifulsoup4==4.14.3
-requests==2.32.5
-
-# Protobuf is resolved from Streamlit and Chroma's dependency constraints.

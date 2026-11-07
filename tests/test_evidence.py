@@ -3,10 +3,16 @@ import unittest
 from unittest.mock import patch
 from langchain_core.documents import Document
 from news_research.config import Settings
-from news_research.generation import generate_answer
+from news_research.generation import generate_answer, invoke_json
 
 
 class EvidenceTests(unittest.TestCase):
+    @patch("news_research.generation.ChatGroq")
+    def test_unconfirmed_billing_cannot_call_provider(self, llm):
+        with self.assertRaisesRegex(ValueError, "free-tier"):
+            invoke_json("system", {}, Settings("test", free_tier_confirmed=False))
+        llm.assert_not_called()
+
     def setUp(self):
         self.docs = [Document(page_content="Revenue increased by 10 percent. Profit was unchanged.",
                              metadata={"source": "https://example.com/a", "chunk_id": "a", "title": "Earnings"})]

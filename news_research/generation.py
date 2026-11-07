@@ -20,6 +20,8 @@ class Answer:
 
 
 def invoke_json(system, payload, settings):
+    if not settings.free_tier_confirmed:
+        raise ValueError("Live generation is disabled until the workspace owner confirms free-tier billing.")
     if not settings.groq_api_key:
         raise ValueError("GROQ_API_KEY is required for live generation.")
     llm = ChatGroq(api_key=settings.groq_api_key, model_name=settings.llm_model,

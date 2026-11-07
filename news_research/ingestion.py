@@ -1,10 +1,10 @@
-"""Extract article text without depending on the UI."""
+"""Extract readable article text and metadata from bounded public-web responses."""
 from dataclasses import dataclass, field
 from urllib.parse import urlparse
-
 import requests
 from bs4 import BeautifulSoup, FeatureNotFound
 from langchain_core.documents import Document
+from news_research.fetching import fetch_html
 
 
 @dataclass
@@ -13,7 +13,7 @@ class IngestionResult:
     warnings: list[str] = field(default_factory=list)
 
 
-def extract_article_text(html: str) -> str:
+def extract_article_text(html):
     try:
         soup = BeautifulSoup(html, "lxml")
     except FeatureNotFound:
@@ -27,41 +27,30 @@ def extract_article_text(html: str) -> str:
     return "\n".join(line.strip() for line in lines if len(line.strip()) > 50)[:15000]
 
 
-def load_articles(urls: list[str]) -> IngestionResult:
+def load_articles(urls):
     result = IngestionResult()
-    with requests.Session() as session:
-        session.headers.update({
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0.0.0 Safari/537.36",
-            "Accept": "text/html,application/xhtml+xml",
-            "Accept-Language": "en-US,en;q=0.9",
-        })
-        for raw_url in urls:
-            url = raw_url.strip()
-            try:
-                parsed = urlparse(url)
-                if parsed.scheme not in {"http", "https"} or not parsed.hostname:
-                    result.warnings.append(f"Invalid article URL: {url}")
-                    continue
-                response = session.get(url, timeout=15)
-                response.raise_for_status()
-                text = extract_article_text(response.text)
-                if text:
-                    soup = BeautifulSoup(response.text, "html.parser")
-                    title = soup.title.get_text(strip=True) if soup.title else url
-                    published = soup.find("meta", attrs={"property": "article:published_time"})
-                    publisher = soup.find("meta", attrs={"property": "og:site_name"})
-                    result.documents.append(Document(page_content=text, metadata={
-                        "source": url, "title": title,
-                        "publisher": publisher.get("content", "") if publisher else parsed.hostname,
-                        "published": published.get("content", "") if published else "",
-                    }))
-                else:
-                    result.warnings.append(f"No readable article text found: {url}")
-            except requests.HTTPError as exc:
-                status = exc.response.status_code if exc.response is not None else "unknown"
-                result.warnings.append(f"HTTP {status} while loading: {url}")
-            except requests.RequestException:
-                result.warnings.append(f"Could not load article (network error or timeout): {url}")
-            except ValueError:
-                result.warnings.append(f"Invalid article URL: {url}")
+    for url in urls:
+        url = url.strip()
+        try:
+            html = fetch_html(url)
+            text = extract_article_text(html)
+            if not text:
+                result.warnings.append(f"No readable article text found: {url}")
+                continue
+            soup = BeautifulSoup(html, "html.parser")
+            title = soup.title.get_text(strip=True) if soup.title else url
+            published = soup.find("meta", attrs={"property": "article:published_time"})
+            publisher = soup.find("meta", attrs={"property": "og:site_name"})
+            result.documents.append(Document(page_content=text, metadata={
+                "source": url, "title": title[:200],
+                "publisher": str(publisher.get("content", "") if publisher else urlparse(url).hostname)[:100],
+                "published": str(published.get("content", "") if published else "")[:100],
+            }))
+        except requests.HTTPError as exc:
+            status = exc.response.status_code if exc.response is not None else "unknown"
+            result.warnings.append(f"HTTP {status} while loading: {url}")
+        except requests.RequestException:
+            result.warnings.append(f"Could not load article (network error or timeout): {url}")
+        except ValueError as exc:
+            result.warnings.append(f"Article rejected: {exc}")
     return result

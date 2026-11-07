@@ -1,4 +1,5 @@
 import os
+import hashlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -17,37 +18,58 @@ class AppTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
         self.addCleanup(self.temp.cleanup)
-        env = patch.dict(os.environ, {"NEWS_RESEARCH_DATA_DIR": self.temp.name, "GROQ_API_KEY": "test", "HUGGINGFACEHUB_API_TOKEN": ""})
+        env = patch.dict(os.environ, {"NEWS_RESEARCH_MODE": "private", "GROQ_FREE_TIER_CONFIRMED": "true", "APP_PASSWORD": "test-workspace-password", "NEWS_RESEARCH_DATA_DIR": self.temp.name, "GROQ_API_KEY": "test", "HUGGINGFACEHUB_API_TOKEN": ""})
         env.start()
         self.addCleanup(env.stop)
         dotenv = patch("news_research.config.load_dotenv")
         dotenv.start()
         self.addCleanup(dotenv.stop)
 
+    def app(self):
+        app = AppTest.from_file(ENTRY)
+        app.session_state["authenticated"] = hashlib.sha256(b"test-workspace-password").hexdigest()
+        return app.run(timeout=30)
+
+    def test_public_demo_works_without_keys_or_private_storage(self):
+        with patch.dict(os.environ, {"NEWS_RESEARCH_MODE": "demo", "GROQ_API_KEY": ""}), patch("news_research.ui.ResearchStore") as store, patch("news_research.ui.generate_answer") as generate:
+            app = AppTest.from_file(ENTRY).run(timeout=30)
+            next(b for b in app.button if b.label == "Find evidence").click().run()
+            self.assertFalse(app.exception)
+            self.assertTrue(any("18 million" in item.value for item in app.text))
+            store.assert_not_called()
+            generate.assert_not_called()
+
+    def test_private_workspace_requires_login_before_storage_access(self):
+        with patch("news_research.ui.ResearchStore") as store:
+            app = AppTest.from_file(ENTRY).run(timeout=30)
+            self.assertFalse(app.exception)
+            self.assertTrue(any(t.label == "Workspace password" for t in app.text_input))
+            store.assert_not_called()
+
     def test_starts_with_groq_only_and_creates_collection(self):
         with patch("news_research.ui.create_embeddings") as embeddings:
-            app = AppTest.from_file(ENTRY).run(timeout=30)
+            app = self.app()
             app.sidebar.text_input[0].set_value("Energy")
-            app.sidebar.button[0].click().run()
+            next(b for b in app.sidebar.button if b.label == "Create collection").click().run()
         self.assertFalse(app.exception)
         self.assertEqual(len(app.sidebar.selectbox[0].options), 2)
         embeddings.assert_not_called()
 
     def test_ingestion_failure_and_success(self):
-        app = AppTest.from_file(ENTRY).run(timeout=30)
+        app = self.app()
         app.sidebar.text_input[1].set_value("https://example.com/story")
         with patch("news_research.ui.load_articles", return_value=IngestionResult()):
-            app.sidebar.button[1].click().run()
+            next(b for b in app.sidebar.button if b.label == "Process Articles").click().run()
         self.assertFalse(app.exception)
         self.assertIn("No articles", app.error[0].value)
         result = IngestionResult(documents=[Document(page_content="A bank story", metadata={"source": "https://example.com/story"})])
         with patch("news_research.ui.load_articles", return_value=result):
-            app.sidebar.button[1].click().run()
+            next(b for b in app.sidebar.button if b.label == "Process Articles").click().run()
         self.assertFalse(app.exception)
         self.assertTrue(app.success)
 
     def test_answer_submission_renders_evidence_without_rerun_api_call(self):
-        app = AppTest.from_file(ENTRY).run(timeout=30)
+        app = self.app()
         store = ResearchStore(self.temp.name)
         collection = store.collections()[0]["id"]
         doc = Document(page_content="Revenue grew.", metadata={"source": "https://example.com/a"})
@@ -65,7 +87,7 @@ class AppTests(unittest.TestCase):
             self.assertEqual(generate.call_count, 1)
 
     def test_comparison_submission_renders_reports(self):
-        app = AppTest.from_file(ENTRY).run(timeout=30)
+        app = self.app()
         store = ResearchStore(self.temp.name)
         collection = store.collections()[0]["id"]
         ids = [store.save_document(collection, Document(page_content=text, metadata={"source": f"https://example.com/{i}", "title": f"Report {i}"}))
